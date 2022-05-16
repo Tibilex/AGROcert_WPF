@@ -20,9 +20,29 @@ namespace AGROcert
     /// </summary>
     public partial class MainWindow : Window
     {
+        private static MainWindow s_window;
+
         public MainWindow()
         {
             InitializeComponent();
+
+            s_window = this;
+        }
+
+        private void CloseWindow_Click(object sender, EventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+        private void MinimiseWindow_Click(object sender, EventArgs e)
+        {
+            this.WindowState = WindowState.Minimized;
+        }
+        private void WindowMoving_Click(object sender, MouseButtonEventArgs e)
+        {
+            if (Mouse.LeftButton == MouseButtonState.Pressed)
+            {
+                s_window.DragMove();
+            }
         }
     }
 }
