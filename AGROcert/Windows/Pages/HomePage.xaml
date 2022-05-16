@@ -32,6 +32,6 @@
         <TextBlock Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource textBoxTitle}" Margin="40 0 0 0" Text="ДОБРО ПОЖАЛОВАТЬ"/>
         <TextBlock Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource textBoxTitle}" Margin="40 0 0 0" Text="В МИР ПРИРОДЫ И"/>
         <TextBlock Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource textBoxTitle}" Margin="40 -50 0 0" Text="ОРГАНИКИ"/>
-        <Button Grid.Row="5" Grid.Column="0" Style="{StaticResource exploreBtn}"/>
+        <Button Grid.Row="5" Grid.Column="0" Style="{StaticResource exploreBtn}" x:Name="exploreBtn" Content="Начать" Padding="-100 0 0 0"/>
     </Grid>
 </Page>

@@ -7,8 +7,70 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="AboutUsPage">
+    <Page.Resources>
+        <ResourceDictionary Source="/Styles/ControlsStyles.xaml"/>
+    </Page.Resources>
+    
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="850"/>
+        </Grid.ColumnDefinitions>
+        <Image Grid.Column="0" Source="/Resources/Image/apricot.jpg" RenderOptions.BitmapScalingMode="Fant" HorizontalAlignment="Left"/>
+        <Grid Grid.Column="1" Background="White" Opacity="1" Margin="0 0 0 0">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition/>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="160"/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
 
-    <Grid Background="Tomato">
+            <TextBlock Grid.Row="1" Style="{StaticResource texBoxItalic}" Text="О Нас"/>
+            <TextBlock Grid.Row="2" Style="{StaticResource textBoxTitle}" Text="МЫ ВЕРИМ В ОРГАНИКУ, В"/>
+            <TextBlock Grid.Row="3" Style="{StaticResource textBoxTitle}" Text="ПРОДУКТЫ ДЛЯ КРЕПКОГО ЗДОРОВЬЯ"/>
+            <TextBlock Grid.Row="4" Style="{StaticResource textBoxRegular}" TextWrapping="Wrap" Text="Добро пожаловать в мир натурального и органического. Здесь вы можете открыть для себя щедрость природы. Мы выросли на принципах здоровья и заботы. Мы стремимся предоставить нашим клиентам здоровую пищу без химикатов для идеального питания."/>
+            <Grid Grid.Row="6">
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition Height="30"/>
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+
+                    <Image Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" Source="/Resources/Icons/aboutUs.png" RenderOptions.BitmapScalingMode="Fant" HorizontalAlignment="Left"/>
+                    <TextBlock Grid.Row="0" Grid.Column="1" Style="{StaticResource textBoxRegular}" Text="Только органическая еда" FontSize="25" Padding="0 0 0 10"/>
+                    <TextBlock Grid.Row="1" Grid.Column="1" Style="{StaticResource textBoxRegular}" TextWrapping="Wrap" Margin="0 -4" Text="Продукт который вы заказали, будет проверен на наличие у нас, если он есть в наличии, мы начнем переходить к следующему шагу." />
+                </Grid>
+                <Grid Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+
+                    <Image Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" Source="/Resources/Icons/aboutUs2.png" RenderOptions.BitmapScalingMode="Fant" HorizontalAlignment="Left"/>
+                    <TextBlock Grid.Row="0" Grid.Column="1" Style="{StaticResource textBoxRegular}" Text="Стандарты качества" FontSize="25" Padding="0 0 0 10"/>
+                    <TextBlock Grid.Row="1" Grid.Column="1" Style="{StaticResource textBoxRegular}" TextWrapping="Wrap" Margin="0 -4" Text="После того, как ваш продукт будет упакован, он будет доставлен в ближайший к вам населенный пункт, который вы можете посетить, чтобы купить продукт." />
+                </Grid>
+            </Grid>
+            <Button Grid.Row="7" Grid.RowSpan="2" Style="{StaticResource exploreBtn}" x:Name="toShopBtn" Width="260" Height="120" HorizontalAlignment="Left" Margin="20 20 0 20" Content="Магазин" Padding="-94 0 0 0"/>
             
+        </Grid> <!-- information grid -->
     </Grid>
 </Page>

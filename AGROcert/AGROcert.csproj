@@ -160,5 +160,12 @@
   <ItemGroup>
     <Resource Include="Resources\Icons\exploreGo.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\apricot.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\aboutUs.png" />
+    <Resource Include="Resources\Icons\aboutUs2.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
