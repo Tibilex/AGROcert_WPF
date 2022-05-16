@@ -47,8 +47,7 @@
                         <ColumnDefinition/>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
-
-                    
+          
                     <TextBlock Grid.Column="1" Grid.ColumnSpan="2" Style="{StaticResource textBoxTitle}" Text="AGROcert"/>
                     <Button Grid.Column="3" Style="{StaticResource navigateButton}" Content="Домой" x:Name="homeBtn" Click="HomeBtn_Click"/>
                     <Button Grid.Column="4" Style="{StaticResource navigateButton}" Content="О нас" x:Name="aboutBtn" Click="AboutBtn_Click"/>

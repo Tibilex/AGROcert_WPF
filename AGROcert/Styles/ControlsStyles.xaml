@@ -3,6 +3,7 @@
     
     <SolidColorBrush x:Key="Color.DarkCyan" Color="#274C5B"/>
     <SolidColorBrush x:Key="Color.White" Color="White"/>
+    <SolidColorBrush x:Key="Color.SoftGray" Color="#F1F1F1"/>
     <SolidColorBrush x:Key="Color.LightGray" Color="#D4D4D4"/>
     <SolidColorBrush x:Key="Color.SoftGreen" Color="#7EB693"/>
     <SolidColorBrush x:Key="Color.Yellow" Color="#EFD372"/>
@@ -168,7 +169,6 @@
                     <Border x:Name="border" Background="{TemplateBinding Background}" Width="{TemplateBinding Width}" BorderBrush="{TemplateBinding BorderBrush}" CornerRadius="70">
                         <Grid>
                             <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Margin="{TemplateBinding Padding}"/>
-                            <!--<TextBlock Text="Начать" Foreground="{StaticResource Color.DarkCyan}" FontSize="30" VerticalAlignment="Center" Margin="24"/>-->
                             <Image Source="/Resources/Icons/exploreGo.png" Margin="160 10 10 10"/>
                         </Grid>
                     </Border>
@@ -193,6 +193,12 @@
             </Setter.Value>
         </Setter>
     </Style>
+    <Style x:Key="statBtn" TargetType="Button">
+        <Setter Property="Foreground" Value="{StaticResource Color.DarkCyan}"/>
+        <Setter Property="FontSize" Value="46"/>
+        <Setter Property="FontFamily" Value="{StaticResource monterrat}"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+    </Style>
 
     <Style x:Key="textBoxTitle" TargetType="TextBlock">
         <Setter Property="Foreground" Value="{StaticResource Color.DarkCyan}"/>
@@ -212,6 +218,11 @@
         <Setter Property="FontFamily" Value="{StaticResource caveat}"/>
         <Setter Property="FontSize" Value="62"/>
     </Style>
+    <Style x:Key="textBoxContasTitle" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="{StaticResource Color.DarkCyan}"/>
+        <Setter Property="FontFamily" Value="{StaticResource monterrat}"/>
+        <Setter Property="FontSize" Value="38"/>
+    </Style>
 
     <Style x:Key="cartBorder" TargetType="Border">
         <Setter Property="CornerRadius" Value="35"/>
@@ -219,4 +230,33 @@
         <Setter Property="BorderBrush" Value="{StaticResource Color.LightGray}"/>
         <Setter Property="Margin" Value="60 0 40 0"/>
     </Style>
+    
+    <ControlTemplate x:Key="statButtonTemp1" TargetType="{x:Type Button}">
+        <Grid>
+            <Ellipse Fill="{StaticResource Color.SoftGray}" Stroke="{StaticResource Color.SoftGreen}" StrokeThickness="4" x:Name="theEllipse" Margin="4"/>
+            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0 0 0 40"/>
+            <TextBlock Style="{StaticResource textBoxRegular}" Text="Органика" Margin="84 30 0 0"/>
+        </Grid>
+    </ControlTemplate>
+    <ControlTemplate x:Key="statButtonTemp2" TargetType="{x:Type Button}">
+        <Grid>
+            <Ellipse Fill="{StaticResource Color.SoftGray}" Stroke="{StaticResource Color.SoftGreen}" StrokeThickness="4" x:Name="theEllipse" Margin="4"/>
+            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0 0 0 40"/>
+            <TextBlock Style="{StaticResource textBoxRegular}" Text="Кол. Товаров" Margin="74 30 0 0"/>
+        </Grid>
+    </ControlTemplate>
+    <ControlTemplate x:Key="statButtonTemp3" TargetType="{x:Type Button}">
+        <Grid>
+            <Ellipse Fill="{StaticResource Color.SoftGray}" Stroke="{StaticResource Color.SoftGreen}" StrokeThickness="4" x:Name="theEllipse" Margin="4"/>
+            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0 0 0 40"/>
+            <TextBlock Style="{StaticResource textBoxRegular}" Text="Органические сады" Margin="38 30 0 0"/>
+        </Grid>
+    </ControlTemplate>
+    <ControlTemplate x:Key="statButtonTemp4" TargetType="{x:Type Button}">
+        <Grid>
+            <Ellipse Fill="{StaticResource Color.SoftGray}" Stroke="{StaticResource Color.SoftGreen}" StrokeThickness="4" x:Name="theEllipse" Margin="4"/>
+            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0 0 0 40"/>
+            <TextBlock Style="{StaticResource textBoxRegular}" Text="Лет на рынке" Margin="66 30 0 0"/>
+        </Grid>
+    </ControlTemplate>
 </ResourceDictionary>

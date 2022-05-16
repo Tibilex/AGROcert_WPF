@@ -7,8 +7,87 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="ContactUsPage">
-
+    <Page.Resources>
+        <ResourceDictionary Source="/Styles/ControlsStyles.xaml"/>
+    </Page.Resources>
+    
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="260"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="260"/>
+                <ColumnDefinition Width="260"/>
+                <ColumnDefinition Width="260"/>
+                <ColumnDefinition Width="260"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            
+            <Button Grid.Column="1" Template="{StaticResource statButtonTemp1}" Style="{StaticResource statBtn}" Content="100%"/>
+            <Button Grid.Column="2" Template="{StaticResource statButtonTemp2}" Style="{StaticResource statBtn}" Content="285"/>
+            <Button Grid.Column="3" Template="{StaticResource statButtonTemp3}" Style="{StaticResource statBtn}" Content="385+"/>
+            <Button Grid.Column="4" Template="{StaticResource statButtonTemp4}" Style="{StaticResource statBtn}" Content="25+"/>
+        </Grid>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="400"/>
+                <ColumnDefinition Width="2"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="2"/>
+                <ColumnDefinition Width="400"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="1" Background="{StaticResource Color.LightGray}"/>
+            <Grid Grid.Column="3" Background="{StaticResource Color.LightGray}"/>
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="0" Style="{StaticResource textBoxContasTitle}" Text="Наши контакты" HorizontalAlignment="Right" Margin="0 0 20 0"/>
+                <StackPanel Grid.Row="1">
+                    <TextBlock Text="Email" Style="{StaticResource textBoxContasTitle}" HorizontalAlignment="Right" Margin="0 0 20 0"/>
+                    <TextBlock Text="office_kam@itstep.org" Style="{StaticResource textBoxRegular}" HorizontalAlignment="Right" Margin="0 0 20 0"/>
+                </StackPanel>
+                <StackPanel Grid.Row="2">
+                    <TextBlock Text="Телефон" Style="{StaticResource textBoxContasTitle}" HorizontalAlignment="Right" Margin="0 0 20 0"/>
+                    <TextBlock Text="(067) 533-46-28" Style="{StaticResource textBoxRegular}" HorizontalAlignment="Right" Margin="0 0 20 0"/>
+                </StackPanel>
+                <StackPanel Grid.Row="3">
+                    <TextBlock Text="Адрес" Style="{StaticResource textBoxContasTitle}" HorizontalAlignment="Right" Margin="0 0 20 0"/>
+                    <TextBlock Text="пр-т. Свободы, 35а, 5 этаж" Style="{StaticResource textBoxRegular}" HorizontalAlignment="Right" Margin="0 0 20 0"/>
+                    <TextBlock Text="бул. Строителей, 39а" Style="{StaticResource textBoxRegular}" HorizontalAlignment="Right" Margin="0 0 20 0"/>
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Column="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Image Grid.Row="0" Source="/Resources/Icons/logo.png" Margin="-240 0 0 0" RenderOptions.BitmapScalingMode="Fant"/>
+                <TextBlock Grid.Row="0" Style="{StaticResource textBoxTitle}" Text="AGROcert" HorizontalAlignment="Center" Margin="110 50 0 0"/>
+                <TextBlock Grid.Row="1" Style="{StaticResource textBoxRegular}" TextWrapping="Wrap" HorizontalAlignment="Center" TextAlignment="Center" Padding="20 0" Text="Мы популярная фермерская компания, стремящаяся стать лидером в индустрии органических продуктов питания."/>
+                <Ellipse Grid.Row="2" Height="70" Width="70" Fill="{StaticResource Color.SoftGreen}" Opacity="0.2" HorizontalAlignment="Left" Margin="80 0 0 0"/>
+                <Ellipse Grid.Row="3" Height="70" Width="70" Fill="{StaticResource Color.SoftGreen}" Opacity="0.2" HorizontalAlignment="Left" Margin="80 0 0 0"/>
+                <Ellipse Grid.Row="4" Height="70" Width="70" Fill="{StaticResource Color.SoftGreen}" Opacity="0.2" HorizontalAlignment="Left" Margin="80 0 0 0"/>
+                <Image Grid.Row="2" Source="/Resources/Icons/facebook.png" RenderOptions.BitmapScalingMode="Fant" HorizontalAlignment="Left" Margin="95 20 20 20"/>
+                <Image Grid.Row="3" Source="/Resources/Icons/twitter.png" RenderOptions.BitmapScalingMode="Fant" HorizontalAlignment="Left" Margin="95 24 24 24"/>
+                <Image Grid.Row="4" Source="/Resources/Icons/instagramm.png" RenderOptions.BitmapScalingMode="Fant" HorizontalAlignment="Left" Margin="95 20 20 20"/>
+                <TextBlock Grid.Row="2" Style="{StaticResource textBoxRegular}" Text="facebook.com/itstep.kam" HorizontalAlignment="Center"/>
+                <TextBlock Grid.Row="3" Style="{StaticResource textBoxRegular}" Text="instagram.com/itstep_kamenskoe" HorizontalAlignment="Center"  Margin="70 0 0 0"/>
+                <TextBlock Grid.Row="4" Style="{StaticResource textBoxRegular}" Text="twitter.com/itstep" HorizontalAlignment="Center"  Margin="0 0 60 0"/>
+            </Grid>
+        </Grid> <!-- contacts Grid -->
     </Grid>
 </Page>
