@@ -130,11 +130,14 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Resource Include="Resources\Fonts\Caveat-Bold.ttf" />
+    <Resource Include="Resources\Fonts\Caveat-Medium.ttf" />
+    <Resource Include="Resources\Fonts\Caveat-Regular.ttf" />
+    <Resource Include="Resources\Fonts\Caveat-SemiBold.ttf" />
     <Resource Include="Resources\Fonts\Montserrat-Bold.ttf" />
     <Resource Include="Resources\Fonts\Montserrat-BoldItalic.ttf" />
     <Resource Include="Resources\Fonts\Montserrat-LightItalic.ttf" />
     <Resource Include="Resources\Fonts\Montserrat-Regular.ttf" />
-    <Resource Include="Resources\Fonts\KaushanScript-Regular.ttf" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -153,6 +156,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Image\title.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\exploreGo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
