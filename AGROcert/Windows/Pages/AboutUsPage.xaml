@@ -72,8 +72,7 @@
                     <TextBlock Grid.Row="1" Grid.Column="1" Style="{StaticResource textBoxRegular}" TextWrapping="Wrap" Margin="0 -4" Text="После того, как ваш продукт будет упакован, он будет доставлен в ближайший к вам населенный пункт, который вы можете посетить, чтобы купить продукт." />
                 </Grid>
             </Grid>
-            <Button Grid.Row="9" Style="{StaticResource exploreBtn}" x:Name="toShopBtn" HorizontalAlignment="Left" Margin="0 20 0 20" Content="Магазин" Padding="-130 0 0 0"/>
-            
+            <Button Grid.Row="9" Style="{StaticResource exploreBtn}" x:Name="toShopBtn" HorizontalAlignment="Left" Content="Магазин" Margin="0 20 0 20" Padding="-130 0 0 0" Click="toShopBtn_Click"/>
         </Grid> <!-- information grid -->
     </Grid>
 </Page>

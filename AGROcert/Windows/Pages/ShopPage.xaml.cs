@@ -20,9 +20,11 @@ namespace AGROcert.Windows.Pages
     /// </summary>
     public partial class ShopPage : Page
     {
+
         public ShopPage()
         {
             InitializeComponent();
-        }
+            
+        }           
     }
 }

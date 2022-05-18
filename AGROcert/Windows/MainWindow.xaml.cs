@@ -23,22 +23,28 @@ namespace AGROcert
     public partial class MainWindow : Window
     {
         private static MainWindow s_window;
-        private List<Page> _listPages;
+        private HomePage _homePage;
+        private AboutUsPage _aboutPage;
+        private ShopPage _shopPage;
+        private PagesPage _pagesPage;
+        private ContactUsPage _contactUsPage;
 
         public MainWindow()
         {
             InitializeComponent();
             s_window = this;
 
-            _listPages = new List<Page>();
-            _listPages.Add(new HomePage());
-            _listPages.Add(new AboutUsPage());
-            _listPages.Add(new ShopPage());
-            _listPages.Add(new PagesPage());
-            _listPages.Add(new ContactUsPage());
+            _homePage = new HomePage();
+            _aboutPage = new AboutUsPage();
+            _shopPage = new ShopPage();
+            _contactUsPage = new ContactUsPage();
+            _pagesPage = new PagesPage();
 
-            progpamPages.Content = _listPages[0];
-
+            progpamPages.Navigate(_homePage);
+            _aboutPage.Navigate = progpamPages;
+            _homePage.Navigate = progpamPages;
+            _aboutPage.Page = _shopPage;
+            _homePage.Page = _aboutPage;
         }
 
         private void CloseWindow_Click(object sender, EventArgs e)
@@ -66,27 +72,31 @@ namespace AGROcert
 
         private void HomeBtn_Click(object sender, RoutedEventArgs e)
         {
-            progpamPages.Content = _listPages[0];
+            progpamPages.Navigate(_homePage);
         }
 
         private void AboutBtn_Click(object sender, RoutedEventArgs e)
         {
-            progpamPages.Content = _listPages[1];
+            progpamPages.Navigate(_aboutPage);
+            //progpamPages.Content = _listPages[1];
         }
 
         private void MarketBtn_Click(object sender, RoutedEventArgs e)
         {
-            progpamPages.Content = _listPages[2];
+            progpamPages.Navigate(_shopPage);
+            //progpamPages.Content = _listPages[2];
         }
 
         private void PagesBtn_Click(object sender, RoutedEventArgs e)
         {
-            progpamPages.Content = _listPages[3];
+            progpamPages.Navigate(_pagesPage);
+            //progpamPages.Content = _listPages[3];
         }
 
         private void ContactsBtn_Click(object sender, RoutedEventArgs e)
         {
-            progpamPages.Content = _listPages[4];
+            progpamPages.Navigate(_contactUsPage);
+            //progpamPages.Content = _listPages[4];
         }
     }
 }

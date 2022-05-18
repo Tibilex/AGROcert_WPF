@@ -172,5 +172,16 @@
     <Resource Include="Resources\Icons\instagramm.png" />
     <Resource Include="Resources\Icons\twitter.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Windows\Controls\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\Products\almond.png" />
+    <Resource Include="Resources\Image\Products\brokoli.png" />
+    <Resource Include="Resources\Image\Products\corn.png" />
+    <Resource Include="Resources\Image\Products\hazel.png" />
+    <Resource Include="Resources\Image\Products\pistachio.png" />
+    <Resource Include="Resources\Image\Products\tomato.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

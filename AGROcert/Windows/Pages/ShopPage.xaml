@@ -8,7 +8,39 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="ShopPage">
 
+    <Page.Resources>
+        <ResourceDictionary Source="/Styles/ControlsStyles.xaml"/>
+    </Page.Resources>
+    
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0" Text="Органика" Style="{StaticResource texBoxItalic}" HorizontalAlignment="Center"/>
+            <TextBlock Grid.Row="1" Text="Наши Продукы" Style="{StaticResource textBoxTitle}" HorizontalAlignment="Center"/>
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Grid.Row="0" Grid.Column="1">
+                <TextBlock Text="test" Style="{StaticResource textBoxRegular}"/>
+
+            </StackPanel>
+        </Grid>
     </Grid>
 </Page>
