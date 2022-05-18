@@ -56,6 +56,9 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
+    <Compile Include="Windows\Controls\ProductItem.xaml.cs">
+      <DependentUpon>ProductItem.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\Pages\AboutUsPage.xaml.cs">
       <DependentUpon>AboutUsPage.xaml</DependentUpon>
     </Compile>
@@ -72,6 +75,10 @@
       <DependentUpon>ShopPage.xaml</DependentUpon>
     </Compile>
     <Page Include="Styles\ControlsStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Controls\ProductItem.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -172,9 +179,7 @@
     <Resource Include="Resources\Icons\instagramm.png" />
     <Resource Include="Resources\Icons\twitter.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Windows\Controls\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Resource Include="Resources\Image\Products\almond.png" />
     <Resource Include="Resources\Image\Products\brokoli.png" />

@@ -6,6 +6,7 @@
     <SolidColorBrush x:Key="Color.SoftGray" Color="#F1F1F1"/>
     <SolidColorBrush x:Key="Color.LightGray" Color="#D4D4D4"/>
     <SolidColorBrush x:Key="Color.SoftGreen" Color="#7EB693"/>
+    <SolidColorBrush x:Key="Color.SoftLime" Color="#EFF6F1"/>
     <SolidColorBrush x:Key="Color.Yellow" Color="#EFD372"/>
 
     <FontFamily x:Key="monterrat">pack://application:,,,/Resources/Fonts/#Montserrat</FontFamily>
@@ -87,28 +88,28 @@
                         <EventTrigger RoutedEvent="MouseEnter">
                             <BeginStoryboard>
                                 <Storyboard Storyboard.TargetProperty="Background.Color">
-                                    <ColorAnimation To="#7EB693" Duration="0:0:0:1" SpeedRatio="4"/>
+                                    <ColorAnimation To="#7EB693" Duration="0:0:0:1" SpeedRatio="2"/>
                                 </Storyboard>
                             </BeginStoryboard>
                         </EventTrigger>
                         <EventTrigger RoutedEvent="MouseEnter">
                             <BeginStoryboard>
                                 <Storyboard Storyboard.TargetProperty="Foreground.Color">
-                                    <ColorAnimation To="White" Duration="0:0:0:1" SpeedRatio="4"/>
+                                    <ColorAnimation To="White" Duration="0:0:0:1" SpeedRatio="2"/>
                                 </Storyboard>
                             </BeginStoryboard>
                         </EventTrigger>
                         <EventTrigger RoutedEvent="MouseLeave">
                             <BeginStoryboard>
                                 <Storyboard Storyboard.TargetProperty="Background.Color">
-                                    <ColorAnimation To="White" Duration="0:0:0:1" SpeedRatio="4"/>
+                                    <ColorAnimation To="White" Duration="0:0:0:1" SpeedRatio="5"/>
                                 </Storyboard>
                             </BeginStoryboard>
                         </EventTrigger>
                         <EventTrigger RoutedEvent="MouseLeave">
                             <BeginStoryboard>
                                 <Storyboard Storyboard.TargetProperty="Foreground.Color">
-                                    <ColorAnimation To="#274C5B" Duration="0:0:0:1" SpeedRatio="4"/>
+                                    <ColorAnimation To="#274C5B" Duration="0:0:0:1" SpeedRatio="5"/>
                                 </Storyboard>
                             </BeginStoryboard>
                         </EventTrigger>
@@ -118,6 +119,11 @@
                             <Setter Property="Margin" TargetName="borderInner" Value="2"/>
                             <Setter Property="BorderBrush" TargetName="borderInner" Value="{StaticResource Color.White}"/>
                             <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Color.SoftGreen}"/>
+                            <Setter Property="Effect">
+                                <Setter.Value>
+                                    <DropShadowEffect BlurRadius="20" ShadowDepth="10" Color="#7EB693" Opacity="0.5" Direction="265"/>
+                                </Setter.Value>
+                            </Setter>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -163,6 +169,11 @@
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="Margin" Value="40 0 0 0"/>
         <Setter Property="BorderBrush" Value="{StaticResource Color.DarkCyan}"/>
+        <Setter Property="Effect">
+            <Setter.Value>
+                <DropShadowEffect BlurRadius="20" ShadowDepth="10" Color="#EFD372" Opacity="0.5" Direction="300"/>
+            </Setter.Value>
+        </Setter>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
@@ -188,6 +199,13 @@
                                 </Storyboard>
                             </BeginStoryboard>
                         </EventTrigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Effect">
+                                <Setter.Value>
+                                    <DropShadowEffect BlurRadius="20" ShadowDepth="10" Color="#7EB693" Opacity="0.5" Direction="300"/>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
@@ -198,6 +216,74 @@
         <Setter Property="FontSize" Value="46"/>
         <Setter Property="FontFamily" Value="{StaticResource monterrat}"/>
         <Setter Property="FontWeight" Value="Bold"/>
+    </Style>
+    <Style x:Key="productTypeBtn" TargetType="Button">
+        <Setter Property="Background" Value="{StaticResource Color.DarkCyan}"/>
+        <Setter Property="Foreground" Value="white"/>
+        <Setter Property="FontFamily" Value="{StaticResource monterrat}"/>
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="FontWeight" Value="Regular"/>
+        <Setter Property="Width" Value="100"/>
+        <Setter Property="Height" Value="25"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border x:Name="border" CornerRadius="8" BorderBrush="{TemplateBinding Background}" BorderThickness="1" Background="{TemplateBinding Background}">
+                        <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="productBuyBtn" TargetType="Button">
+        <Setter Property="Background" Value="{StaticResource Color.DarkCyan}"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="FontFamily" Value="{StaticResource monterrat}"/>
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="FontWeight" Value="Regular"/>
+        <Setter Property="Width" Value="100"/>
+        <Setter Property="Height" Value="25"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border x:Name="border" CornerRadius="8" BorderBrush="{TemplateBinding Background}" BorderThickness="1" Background="{TemplateBinding Background}">
+                        <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <EventTrigger RoutedEvent="MouseEnter">
+                            <BeginStoryboard>
+                                <Storyboard Storyboard.TargetProperty="Background.Color">
+                                    <ColorAnimation To="#7EB693" Duration="0:0:0:1" SpeedRatio="2"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="MouseLeave">
+                            <BeginStoryboard>
+                                <Storyboard Storyboard.TargetProperty="Background.Color">
+                                    <ColorAnimation To="#274C5B" Duration="0:0:0:1" SpeedRatio="5"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="MouseEnter">
+                            <BeginStoryboard>
+                                <Storyboard Storyboard.TargetProperty="Foreground.Color">
+                                    <ColorAnimation To="#274C5B" Duration="0:0:0:1" SpeedRatio="2"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="MouseLeave">
+                            <BeginStoryboard>
+                                <Storyboard Storyboard.TargetProperty="Foreground.Color">
+                                    <ColorAnimation To="White" Duration="0:0:0:1" SpeedRatio="5"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
     </Style>
 
     <Style x:Key="textBoxTitle" TargetType="TextBlock">

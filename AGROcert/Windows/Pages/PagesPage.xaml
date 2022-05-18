@@ -8,7 +8,22 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="PagesPage">
 
-    <Grid>
+    <Page.Resources>
+        <ResourceDictionary Source="/Styles/ControlsStyles.xaml"/>
+    </Page.Resources>
+    
+    <Grid Background="{StaticResource Color.SoftLime}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        
         
     </Grid>
 </Page>

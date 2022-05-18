@@ -3,7 +3,8 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:AGROcert.Windows.Pages"
+      xmlns:local="clr-namespace:AGROcert.Windows.Pages" 
+      xmlns:controls="clr-namespace:AGROcert.Windows.Controls"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="ShopPage">
@@ -22,25 +23,27 @@
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
             </Grid.RowDefinitions>
-            <TextBlock Grid.Row="0" Text="Органика" Style="{StaticResource texBoxItalic}" HorizontalAlignment="Center"/>
-            <TextBlock Grid.Row="1" Text="Наши Продукы" Style="{StaticResource textBoxTitle}" HorizontalAlignment="Center"/>
+            <TextBlock Grid.Row="0" Text="Органика" Style="{StaticResource texBoxItalic}" HorizontalAlignment="Center" Margin="0 0 0 0"/>
+            <TextBlock Grid.Row="1" Text="Наши Продукы" Style="{StaticResource textBoxTitle}" HorizontalAlignment="Center" Margin="0 0 0 0"/>
         </Grid>
-
         <Grid Grid.Row="1">
-            <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-
-            <StackPanel Grid.Row="0" Grid.Column="1">
-                <TextBlock Text="test" Style="{StaticResource textBoxRegular}"/>
-
-            </StackPanel>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition Height="8"/> 
+            </Grid.RowDefinitions>
+            <controls:ProductItem Grid.Column="0" Grid.Row="0"></controls:ProductItem>
+            <controls:ProductItem Grid.Column="1" Grid.Row="0"></controls:ProductItem>
+            <controls:ProductItem Grid.Column="2" Grid.Row="0"></controls:ProductItem>
+            <controls:ProductItem Grid.Column="0" Grid.Row="1"></controls:ProductItem>
+            <controls:ProductItem Grid.Column="1" Grid.Row="1"></controls:ProductItem>
+            <controls:ProductItem Grid.Column="2" Grid.Row="1"></controls:ProductItem>
         </Grid>
+
     </Grid>
 </Page>

@@ -78,25 +78,21 @@ namespace AGROcert
         private void AboutBtn_Click(object sender, RoutedEventArgs e)
         {
             progpamPages.Navigate(_aboutPage);
-            //progpamPages.Content = _listPages[1];
         }
 
         private void MarketBtn_Click(object sender, RoutedEventArgs e)
         {
             progpamPages.Navigate(_shopPage);
-            //progpamPages.Content = _listPages[2];
         }
 
         private void PagesBtn_Click(object sender, RoutedEventArgs e)
         {
             progpamPages.Navigate(_pagesPage);
-            //progpamPages.Content = _listPages[3];
         }
 
         private void ContactsBtn_Click(object sender, RoutedEventArgs e)
         {
             progpamPages.Navigate(_contactUsPage);
-            //progpamPages.Content = _listPages[4];
         }
     }
 }

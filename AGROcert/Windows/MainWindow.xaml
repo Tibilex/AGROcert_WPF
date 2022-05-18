@@ -52,7 +52,7 @@
                     <Button Grid.Column="3" Style="{StaticResource navigateButton}" Content="Домой" x:Name="homeBtn" Click="HomeBtn_Click"/>
                     <Button Grid.Column="4" Style="{StaticResource navigateButton}" Content="О нас" x:Name="aboutBtn" Click="AboutBtn_Click"/>
                     <Button Grid.Column="5" Style="{StaticResource navigateButton}" Content="Магазин" x:Name="marketBtn" Click="MarketBtn_Click"/>
-                    <Button Grid.Column="6" Style="{StaticResource navigateButton}" Content="Страницы" x:Name="pagesBtn" Click="PagesBtn_Click"/>
+                    <Button Grid.Column="6" Style="{StaticResource navigateButton}" Content="Категории" x:Name="pagesBtn" Click="PagesBtn_Click"/>
                     <Button Grid.Column="7" Style="{StaticResource navigateButton}" Content="Контакты" x:Name="contactsBtn" Click="ContactsBtn_Click"/>
                     <Border Grid.Column="8" Grid.ColumnSpan="2" Style="{StaticResource cartBorder}">
                         <Grid Margin="-76 0">
