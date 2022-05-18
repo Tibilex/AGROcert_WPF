@@ -24,5 +24,20 @@ namespace AGROcert.Windows.Pages
         {
             InitializeComponent();
         }
+
+        private void foodCategoryBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void juiceCategoryBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void cookiesCategoryBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

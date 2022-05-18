@@ -7,6 +7,7 @@
         mc:Ignorable="d"
         WindowStyle="None"
         MouseLeftButtonDown="WindowMoving_Click"
+        Icon="/Resources/Icons/fiber.png"
         Title="MainWindow" Height="1000" Width="1440" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <ResourceDictionary Source="/Styles/ControlsStyles.xaml"/>
@@ -48,7 +49,7 @@
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
           
-                    <TextBlock Grid.Column="1" Grid.ColumnSpan="2" Style="{StaticResource textBoxTitle}" Text="AGROcert"/>
+                    <TextBlock Grid.Column="1" Grid.ColumnSpan="2" Style="{StaticResource textBoxTitle}" Text="AGROcert" Foreground="{StaticResource Color.Gradient.OrangeLime}"/>
                     <Button Grid.Column="3" Style="{StaticResource navigateButton}" Content="Домой" x:Name="homeBtn" Click="HomeBtn_Click"/>
                     <Button Grid.Column="4" Style="{StaticResource navigateButton}" Content="О нас" x:Name="aboutBtn" Click="AboutBtn_Click"/>
                     <Button Grid.Column="5" Style="{StaticResource navigateButton}" Content="Магазин" x:Name="marketBtn" Click="MarketBtn_Click"/>

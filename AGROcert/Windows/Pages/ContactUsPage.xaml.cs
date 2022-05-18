@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +24,23 @@ namespace AGROcert.Windows.Pages
         public ContactUsPage()
         {
             InitializeComponent();
+        }
+
+        private void FacebookLink_Click(object sender, RoutedEventArgs e)
+        {
+            Process.Start("www.facebook.com/itstep.kam");
+        }
+        private void InstagrammLink_Click(object sender, RoutedEventArgs e)
+        {
+            Process.Start("www.instagram.com/itstep_kamenskoe");
+        }
+        private void GitLink_Click(object sender, RoutedEventArgs e)
+        {
+            Process.Start("www.github.com/Tibilex/AGROcert_WPF");
+        }
+        private void WebsiteLink_Click(object sender, RoutedEventArgs e)
+        {
+            Process.Start("www.kam.itstep.org");
         }
     }
 }

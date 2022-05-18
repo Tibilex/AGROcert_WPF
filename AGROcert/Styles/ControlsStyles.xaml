@@ -8,6 +8,16 @@
     <SolidColorBrush x:Key="Color.SoftGreen" Color="#7EB693"/>
     <SolidColorBrush x:Key="Color.SoftLime" Color="#EFF6F1"/>
     <SolidColorBrush x:Key="Color.Yellow" Color="#EFD372"/>
+    <SolidColorBrush x:Key="Color.Orange" Color="#FFA858"/>
+
+    <LinearGradientBrush x:Key="Color.Gradient.OrangeLime" StartPoint="0.2,1" EndPoint="0.8,0">
+        <GradientStop Color="#FFA858" Offset="0"/>
+        <GradientStop Color="#7EB693" Offset="1"/>
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="Color.Gradient.DarkLime" StartPoint="0.2,1" EndPoint="0.8,0">
+        <GradientStop Color="#274C5B" Offset="0"/>
+        <GradientStop Color="#7EB693" Offset="1"/>
+    </LinearGradientBrush>
 
     <FontFamily x:Key="monterrat">pack://application:,,,/Resources/Fonts/#Montserrat</FontFamily>
     <FontFamily x:Key="caveat">pack://application:,,,/Resources/Fonts/#Caveat</FontFamily>
@@ -18,6 +28,9 @@
     <Image x:Key="minimiseStateNormal" Source="/Resources/Icons/minimiseDark.png" RenderOptions.BitmapScalingMode="Fant"/>
     <Image x:Key="cartIcon" Source="/Resources/Icons/carticon.png" RenderOptions.BitmapScalingMode="Fant"/>
     <Image x:Key="exploreIcon" Source="/Resources/Icons/exploreGo.png" RenderOptions.BitmapScalingMode="Fant"/>
+    <Image x:Key="foodCategory" Source="/Resources/Image/foodCategory.png" RenderOptions.BitmapScalingMode="Fant"/>
+    <Image x:Key="juiceCategory" Source="/Resources/Image/juiceCategory.png" RenderOptions.BitmapScalingMode="Fant"/>
+    <Image x:Key="cookiesCategory" Source="/Resources/Image/cookiesCategory.png" RenderOptions.BitmapScalingMode="Fant"/>
 
     <Style x:Key="closeButton" TargetType="Button">
         <Setter Property="Background" Value="{StaticResource Color.White}"/>
@@ -78,8 +91,8 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
-                    <Border x:Name="border" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" CornerRadius="35">
-                        <Border x:Name="borderInner" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" CornerRadius="35">
+                    <Border x:Name="border" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" CornerRadius="32">
+                        <Border x:Name="borderInner" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" CornerRadius="32">
                             <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Margin="{TemplateBinding Padding}"/>
                         </Border>
                     </Border>
@@ -134,7 +147,7 @@
         <Setter Property="Background" Value="{StaticResource Color.White}"/>
         <Setter Property="Foreground" Value="{StaticResource Color.DarkCyan}"/>
         <Setter Property="BorderThickness" Value="0"/>
-        <Setter Property="BorderBrush" Value="{StaticResource Color.DarkCyan}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource Color.White}"/>
         <Setter Property="Width" Value="60"/>
         <Setter Property="Height" Value="60"/>
         <Setter Property="Content" Value="{StaticResource cartIcon}"/>
@@ -285,6 +298,68 @@
             </Setter.Value>
         </Setter>
     </Style>
+    <Style x:Key="categoryInnerBtn" TargetType="Button">
+        <Setter Property="Background" Value="White"/>
+        <Setter Property="Foreground" Value="{StaticResource Color.DarkCyan}"/>
+        <Setter Property="FontFamily" Value="{StaticResource monterrat}"/>
+        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="FontWeight" Value="Regular"/>
+        <Setter Property="Width" Value="300"/>
+        <Setter Property="Height" Value="100"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border x:Name="border" CornerRadius="0" BorderBrush="{TemplateBinding Background}" BorderThickness="1" Background="{TemplateBinding Background}">
+                        <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <EventTrigger RoutedEvent="MouseEnter">
+                            <BeginStoryboard>
+                                <Storyboard Storyboard.TargetProperty="Background.Color">
+                                    <ColorAnimation To="#7EB693" Duration="0:0:0:1" SpeedRatio="2"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="MouseLeave">
+                            <BeginStoryboard>
+                                <Storyboard Storyboard.TargetProperty="Background.Color">
+                                    <ColorAnimation To="White" Duration="0:0:0:1" SpeedRatio="5"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="MouseEnter">
+                            <BeginStoryboard>
+                                <Storyboard Storyboard.TargetProperty="Foreground.Color">
+                                    <ColorAnimation To="White" Duration="0:0:0:1" SpeedRatio="2"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="MouseLeave">
+                            <BeginStoryboard>
+                                <Storyboard Storyboard.TargetProperty="Foreground.Color">
+                                    <ColorAnimation To="#274C5B" Duration="0:0:0:1" SpeedRatio="5"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="categoryBtn" TargetType="Button">
+        <Setter Property="Background" Value="{StaticResource Color.SoftLime}"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border x:Name="border" Background="{TemplateBinding Background}">
+                        <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
 
     <Style x:Key="textBoxTitle" TargetType="TextBlock">
         <Setter Property="Foreground" Value="{StaticResource Color.DarkCyan}"/>
@@ -300,7 +375,7 @@
         <Setter Property="VerticalAlignment" Value="Center"/>
     </Style>
     <Style x:Key="texBoxItalic" TargetType="TextBlock">
-        <Setter Property="Foreground" Value="{StaticResource Color.SoftGreen}"/>
+        <Setter Property="Foreground" Value="{StaticResource Color.Gradient.OrangeLime}"/>
         <Setter Property="FontFamily" Value="{StaticResource caveat}"/>
         <Setter Property="FontSize" Value="62"/>
     </Style>
@@ -315,6 +390,14 @@
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="BorderBrush" Value="{StaticResource Color.LightGray}"/>
         <Setter Property="Margin" Value="60 0 40 0"/>
+    </Style>
+    <Style x:Key="hyperlink" TargetType="Hyperlink">
+        <Setter Property="Foreground" Value="{StaticResource Color.DarkCyan}"/>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Foreground" Value="{StaticResource Color.Gradient.OrangeLime}"/>
+            </Trigger>
+        </Style.Triggers>
     </Style>
     
     <ControlTemplate x:Key="statButtonTemp1" TargetType="{x:Type Button}">

@@ -76,17 +76,31 @@
                 </Grid.RowDefinitions>
 
                 <Image Grid.Row="0" Source="/Resources/Icons/logo.png" Margin="-240 0 0 0" RenderOptions.BitmapScalingMode="Fant"/>
-                <TextBlock Grid.Row="0" Style="{StaticResource textBoxTitle}" Text="AGROcert" HorizontalAlignment="Center" Margin="110 50 0 0"/>
+                <TextBlock Grid.Row="0" Style="{StaticResource textBoxTitle}" Text="AGROcert" HorizontalAlignment="Center" Margin="110 50 0 0" Foreground="{StaticResource Color.Gradient.OrangeLime}"/>
                 <TextBlock Grid.Row="1" Style="{StaticResource textBoxRegular}" TextWrapping="Wrap" HorizontalAlignment="Center" TextAlignment="Center" Padding="20 0" Text="Мы популярная фермерская компания, стремящаяся стать лидером в индустрии органических продуктов питания."/>
+                
                 <Ellipse Grid.Row="2" Height="70" Width="70" Fill="{StaticResource Color.SoftGreen}" Opacity="0.2" HorizontalAlignment="Left" Margin="80 0 0 0"/>
                 <Ellipse Grid.Row="3" Height="70" Width="70" Fill="{StaticResource Color.SoftGreen}" Opacity="0.2" HorizontalAlignment="Left" Margin="80 0 0 0"/>
                 <Ellipse Grid.Row="4" Height="70" Width="70" Fill="{StaticResource Color.SoftGreen}" Opacity="0.2" HorizontalAlignment="Left" Margin="80 0 0 0"/>
+                <Ellipse Grid.Row="5" Height="70" Width="70" Fill="{StaticResource Color.SoftGreen}" Opacity="0.2" HorizontalAlignment="Left" Margin="80 0 0 0"/>
+                
                 <Image Grid.Row="2" Source="/Resources/Icons/facebook.png" RenderOptions.BitmapScalingMode="Fant" HorizontalAlignment="Left" Margin="95 20 20 20"/>
-                <Image Grid.Row="3" Source="/Resources/Icons/twitter.png" RenderOptions.BitmapScalingMode="Fant" HorizontalAlignment="Left" Margin="95 24 24 24"/>
+                <Image Grid.Row="3" Source="/Resources/Icons/chrome.png" RenderOptions.BitmapScalingMode="Fant" HorizontalAlignment="Left" Margin="98 24 24 24"/>
                 <Image Grid.Row="4" Source="/Resources/Icons/instagramm.png" RenderOptions.BitmapScalingMode="Fant" HorizontalAlignment="Left" Margin="95 20 20 20"/>
-                <TextBlock Grid.Row="2" Style="{StaticResource textBoxRegular}" Text="facebook.com/itstep.kam" HorizontalAlignment="Center"/>
-                <TextBlock Grid.Row="3" Style="{StaticResource textBoxRegular}" Text="instagram.com/itstep_kamenskoe" HorizontalAlignment="Center"  Margin="70 0 0 0"/>
-                <TextBlock Grid.Row="4" Style="{StaticResource textBoxRegular}" Text="twitter.com/itstep" HorizontalAlignment="Center"  Margin="0 0 60 0"/>
+                <Image Grid.Row="5" Source="/Resources/Icons/git.png" RenderOptions.BitmapScalingMode="Fant" HorizontalAlignment="Left" Margin="95 20 20 20"/>
+                
+                <TextBlock Grid.Row="2" Style="{StaticResource textBoxRegular}" HorizontalAlignment="Center" FontSize="20" Margin="0 0 150 0">
+                    <Hyperlink x:Name="facebookLink" Click="FacebookLink_Click" Style="{StaticResource hyperlink}">Facebook</Hyperlink>
+                </TextBlock>
+                <TextBlock Grid.Row="3" Style="{StaticResource textBoxRegular}" HorizontalAlignment="Center" FontSize="20" Margin="0 0 160 0">
+                    <Hyperlink x:Name="websiteLink" Click="WebsiteLink_Click" Style="{StaticResource hyperlink}">Website</Hyperlink>
+                </TextBlock>
+                <TextBlock Grid.Row="4" Style="{StaticResource textBoxRegular}" HorizontalAlignment="Center" FontSize="20" Margin="0 0 120 0">
+                    <Hyperlink x:Name="instagrammLink" Click="InstagrammLink_Click" Style="{StaticResource hyperlink}">Instagramm</Hyperlink>
+                </TextBlock>
+                <TextBlock Grid.Row="5" Style="{StaticResource textBoxRegular}" HorizontalAlignment="Center" FontSize="20" Margin="0 0 170 0">
+                    <Hyperlink x:Name="gitLink" Click="GitLink_Click" Style="{StaticResource hyperlink}">Github</Hyperlink>
+                </TextBlock>
             </Grid>
         </Grid> <!-- contacts Grid -->
     </Grid>

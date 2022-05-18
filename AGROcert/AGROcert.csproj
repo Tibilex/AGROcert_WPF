@@ -175,11 +175,10 @@
     <Resource Include="Resources\Icons\aboutUs2.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Icons\facebook.png" />
-    <Resource Include="Resources\Icons\instagramm.png" />
-    <Resource Include="Resources\Icons\twitter.png" />
+    <Resource Include="Resources\Image\cookiesCategory.png" />
+    <Resource Include="Resources\Image\foodCategory.png" />
+    <Resource Include="Resources\Image\juiceCategory.png" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Resource Include="Resources\Image\Products\almond.png" />
     <Resource Include="Resources\Image\Products\brokoli.png" />
@@ -187,6 +186,19 @@
     <Resource Include="Resources\Image\Products\hazel.png" />
     <Resource Include="Resources\Image\Products\pistachio.png" />
     <Resource Include="Resources\Image\Products\tomato.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\git.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\chrome.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\facebook.png" />
+    <Resource Include="Resources\Icons\instagramm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\fiber.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
