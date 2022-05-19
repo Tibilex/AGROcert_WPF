@@ -5,6 +5,7 @@
     <SolidColorBrush x:Key="Color.White" Color="White"/>
     <SolidColorBrush x:Key="Color.Yellow" Color="#EFD372"/>
     <SolidColorBrush x:Key="Color.Orange" Color="#FFA858"/>
+    <SolidColorBrush x:Key="Color.Salad" Color="#c1daba"/>
     
     <SolidColorBrush x:Key="Color.SoftGray" Color="#F1F1F1"/>
     <SolidColorBrush x:Key="Color.SoftGreen" Color="#7EB693"/>

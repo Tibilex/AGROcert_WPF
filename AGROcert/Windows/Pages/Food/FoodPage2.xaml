@@ -17,7 +17,7 @@
             <RowDefinition Height="100"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Grid Grid.Row="0" Background="#c1daba">
+        <Grid Grid.Row="0" Background="{StaticResource Color.Salad}">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="200"/>
                 <ColumnDefinition/>

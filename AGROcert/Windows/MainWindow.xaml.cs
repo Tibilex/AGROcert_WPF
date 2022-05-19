@@ -29,7 +29,7 @@ namespace AGROcert
         private HomePage _homePage;
         private AboutUsPage _aboutPage;
         private ShopPage _shopPage;
-        private PagesPage _pagesPage;
+        private CategoryPage _categoryPage;
         private ContactUsPage _contactUsPage;
 
         private CookiePage1 _cookiePage1;
@@ -53,7 +53,7 @@ namespace AGROcert
             _aboutPage = new AboutUsPage();
             _shopPage = new ShopPage();
             _contactUsPage = new ContactUsPage();
-            _pagesPage = new PagesPage();
+            _categoryPage = new CategoryPage();
 
             _cookiePage1 = new CookiePage1();
             _cookiePage2 = new CookiePage2();
@@ -79,10 +79,10 @@ namespace AGROcert
             _aboutPage.Page = _shopPage;
             _homePage.Page = _aboutPage;
 
-            _pagesPage.Navigate = progpamPages;
-            _pagesPage.PageFood = _foodPage1;
-            _pagesPage.PageJuice = _juicePage1;
-            _pagesPage.PageCookie = _cookiePage1;
+            _categoryPage.Navigate = progpamPages;
+            _categoryPage.PageFood = _foodPage1;
+            _categoryPage.PageJuice = _juicePage1;
+            _categoryPage.PageCookie = _cookiePage1;
 
             _foodPage1.Navigate = progpamPages;
             _foodPage2.Navigate = progpamPages;
@@ -146,7 +146,7 @@ namespace AGROcert
 
         private void PagesBtn_Click(object sender, RoutedEventArgs e)
         {
-            progpamPages.Navigate(_pagesPage);
+            progpamPages.Navigate(_categoryPage);
         }
 
         private void ContactsBtn_Click(object sender, RoutedEventArgs e)

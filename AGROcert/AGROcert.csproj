@@ -95,8 +95,8 @@
     <Compile Include="Windows\Pages\Juice\JuicePage3.xaml.cs">
       <DependentUpon>JuicePage3.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Windows\Pages\PagesPage.xaml.cs">
-      <DependentUpon>PagesPage.xaml</DependentUpon>
+    <Compile Include="Windows\Pages\CategoryPage.xaml.cs">
+      <DependentUpon>CategoryPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\Pages\ShopPage.xaml.cs">
       <DependentUpon>ShopPage.xaml</DependentUpon>
@@ -169,7 +169,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Windows\Pages\PagesPage.xaml">
+    <Page Include="Windows\Pages\CategoryPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

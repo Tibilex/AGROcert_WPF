@@ -16,9 +16,9 @@ using System.Windows.Shapes;
 namespace AGROcert.Windows.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для PagesPage.xaml
+    /// Логика взаимодействия для CategoryPage.xaml
     /// </summary>
-    public partial class PagesPage : Page
+    public partial class CategoryPage : Page
     {
         private Frame _navigate;
         public Frame Navigate
@@ -45,7 +45,7 @@ namespace AGROcert.Windows.Pages
             set { _pageCookie = value; }
         }
 
-        public PagesPage()
+        public CategoryPage()
         {
             InitializeComponent();
         }
