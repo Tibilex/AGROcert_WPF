@@ -3,12 +3,16 @@
     
     <SolidColorBrush x:Key="Color.DarkCyan" Color="#274C5B"/>
     <SolidColorBrush x:Key="Color.White" Color="White"/>
-    <SolidColorBrush x:Key="Color.SoftGray" Color="#F1F1F1"/>
-    <SolidColorBrush x:Key="Color.LightGray" Color="#D4D4D4"/>
-    <SolidColorBrush x:Key="Color.SoftGreen" Color="#7EB693"/>
-    <SolidColorBrush x:Key="Color.SoftLime" Color="#EFF6F1"/>
     <SolidColorBrush x:Key="Color.Yellow" Color="#EFD372"/>
     <SolidColorBrush x:Key="Color.Orange" Color="#FFA858"/>
+    
+    <SolidColorBrush x:Key="Color.SoftGray" Color="#F1F1F1"/>
+    <SolidColorBrush x:Key="Color.SoftGreen" Color="#7EB693"/>
+    <SolidColorBrush x:Key="Color.SoftLime" Color="#EFF6F1"/>
+    
+    <SolidColorBrush x:Key="Color.LightGray" Color="#D4D4D4"/>
+    <SolidColorBrush x:Key="Color.LightYellow" Color="#fdeca6"/>
+    <SolidColorBrush x:Key="Color.LightBrown" Color="#e6d5b9"/>
 
     <LinearGradientBrush x:Key="Color.Gradient.OrangeLime" StartPoint="0.2,1" EndPoint="0.8,0">
         <GradientStop Color="#FFA858" Offset="0"/>

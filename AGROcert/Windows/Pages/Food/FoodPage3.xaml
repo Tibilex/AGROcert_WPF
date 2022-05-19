@@ -17,7 +17,7 @@
             <RowDefinition Height="100"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Grid Grid.Row="0" Background="{StaticResource Color.SoftLime}">
+        <Grid Grid.Row="0" Background="#c1daba">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="200"/>
                 <ColumnDefinition/>
@@ -25,7 +25,7 @@
             </Grid.ColumnDefinitions>
             <TextBlock Grid.Column="1" Style="{StaticResource textBoxTitle}" Text="Здоровая еда" HorizontalAlignment="Center"/>
             <TextBlock Grid.Column="1" Style="{StaticResource textBoxRegular}" Text="Страница - 3 -" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0 0 0 10"/>
-            <Button Grid.Column="0" x:Name="prevPageBtn" Style="{StaticResource PrevPageBtn}" Content="Назад"/>
+            <Button Grid.Column="0" x:Name="prevPageBtn" Style="{StaticResource PrevPageBtn}" Content="Назад" Click="PrevPageBtn_Click"/>
             <Button Grid.Column="2" x:Name="nextPageBtn" Style="{StaticResource NextPageBtn}" Content="Вперед" IsEnabled="False"/>
         </Grid>
         <Grid Grid.Row="1">

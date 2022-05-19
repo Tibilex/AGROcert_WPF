@@ -38,5 +38,15 @@ namespace AGROcert.Windows.Pages.Food
         {
             InitializeComponent();
         }
+
+        private void NextPageBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Navigate.Navigate(Page);
+        }
+
+        private void PrevPageBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Navigate.GoBack();
+        }
     }
 }

@@ -84,6 +84,26 @@ namespace AGROcert
             _pagesPage.PageJuice = _juicePage1;
             _pagesPage.PageCookie = _cookiePage1;
 
+            _foodPage1.Navigate = progpamPages;
+            _foodPage2.Navigate = progpamPages;
+            _foodPage3.Navigate = progpamPages;
+            _foodPage1.Page = _foodPage2;
+            _foodPage2.Page = _foodPage3;
+            _foodPage3.Page = _foodPage2;
+
+            _juicePage1.Navigate = progpamPages;
+            _juicePage2.Navigate = progpamPages;
+            _juicePage3.Navigate = progpamPages;
+            _juicePage1.Page = _juicePage2;
+            _juicePage2.Page = _juicePage3;
+            _juicePage3.Page = _juicePage2;
+
+            _cookiePage1.Navigate = progpamPages;
+            _cookiePage2.Navigate = progpamPages;
+            _cookiePage3.Navigate = progpamPages;
+            _cookiePage1.Page = _cookiePage2;
+            _cookiePage2.Page = _cookiePage3;
+            _cookiePage3.Page = _cookiePage2;
         }
 
         private void CloseWindow_Click(object sender, EventArgs e)

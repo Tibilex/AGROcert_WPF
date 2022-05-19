@@ -18,7 +18,7 @@
             <RowDefinition Height="100"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Grid Grid.Row="0" Background="{StaticResource Color.SoftLime}">
+        <Grid Grid.Row="0" Background="{StaticResource Color.LightYellow}">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="200"/>
                 <ColumnDefinition/>
@@ -26,8 +26,8 @@
             </Grid.ColumnDefinitions>
             <TextBlock Grid.Column="1" Style="{StaticResource textBoxTitle}" Text="Натуральные соки" HorizontalAlignment="Center"/>
             <TextBlock Grid.Column="1" Style="{StaticResource textBoxRegular}" Text="Страница - 1 -" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0 0 0 10"/>
-            <Button Grid.Column="0" x:Name="prevPageBtn" Style="{StaticResource PrevPageBtn}" Content="Назад" IsEnabled="False"/>
-            <Button Grid.Column="2" x:Name="nextPageBtn" Style="{StaticResource NextPageBtn}" Content="Вперед"/>
+            <Button Grid.Column="0" x:Name="prevPageBtn" Style="{StaticResource PrevPageBtn}" Content="Назад" Click="PrevPageBtn_Click"/>
+            <Button Grid.Column="2" x:Name="nextPageBtn" Style="{StaticResource NextPageBtn}" Content="Вперед" Click="NextPageBtn_Click"/>
         </Grid>
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>

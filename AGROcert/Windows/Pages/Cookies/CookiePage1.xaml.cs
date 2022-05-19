@@ -20,9 +20,33 @@ namespace AGROcert.Windows.Pages.Cookies
     /// </summary>
     public partial class CookiePage1 : Page
     {
+        private Frame _navigate;
+        public Frame Navigate
+        {
+            get { return _navigate; }
+            set { _navigate = value; }
+        }
+
+        private Page _page;
+        public Page Page
+        {
+            get { return _page; }
+            set { _page = value; }
+        }
+
         public CookiePage1()
         {
             InitializeComponent();
+        }
+
+        private void NextPageBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Navigate.Navigate(Page);
+        }
+
+        private void PrevPageBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Navigate.GoBack();
         }
     }
 }
