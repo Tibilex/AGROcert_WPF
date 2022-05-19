@@ -1,5 +1,8 @@
 ﻿using AGROcert.ViewModels;
 using AGROcert.Windows.Pages;
+using AGROcert.Windows.Pages.Cookies;
+using AGROcert.Windows.Pages.Food;
+using AGROcert.Windows.Pages.Juice;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,6 +32,18 @@ namespace AGROcert
         private PagesPage _pagesPage;
         private ContactUsPage _contactUsPage;
 
+        private CookiePage1 _cookiePage1;
+        private CookiePage2 _cookiePage2;
+        private CookiePage3 _cookiePage3;
+
+        private FoodPage1 _foodPage1;
+        private FoodPage2 _foodPage2;
+        private FoodPage3 _foodPage3;
+
+        private JuicePage1 _juicePage1;
+        private JuicePage2 _juicePage2;
+        private JuicePage3 _juicePage3;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -40,11 +55,35 @@ namespace AGROcert
             _contactUsPage = new ContactUsPage();
             _pagesPage = new PagesPage();
 
+            _cookiePage1 = new CookiePage1();
+            _cookiePage2 = new CookiePage2();
+            _cookiePage3 = new CookiePage3();
+
+            _foodPage1 = new FoodPage1();
+            _foodPage2 = new FoodPage2();
+            _foodPage3 = new FoodPage3();
+
+            _juicePage1 = new JuicePage1();
+            _juicePage2 = new JuicePage2();
+            _juicePage3 = new JuicePage3();
+
             progpamPages.Navigate(_homePage);
+
+            NavigationForPages();
+        }
+
+        private void NavigationForPages()
+        {
             _aboutPage.Navigate = progpamPages;
             _homePage.Navigate = progpamPages;
             _aboutPage.Page = _shopPage;
             _homePage.Page = _aboutPage;
+
+            _pagesPage.Navigate = progpamPages;
+            _pagesPage.PageFood = _foodPage1;
+            _pagesPage.PageJuice = _juicePage1;
+            _pagesPage.PageCookie = _cookiePage1;
+
         }
 
         private void CloseWindow_Click(object sender, EventArgs e)

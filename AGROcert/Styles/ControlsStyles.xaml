@@ -32,6 +32,19 @@
     <Image x:Key="juiceCategory" Source="/Resources/Image/juiceCategory.png" RenderOptions.BitmapScalingMode="Fant"/>
     <Image x:Key="cookiesCategory" Source="/Resources/Image/cookiesCategory.png" RenderOptions.BitmapScalingMode="Fant"/>
 
+    <Style x:Key="PrevArowPolygon" TargetType="Polygon">
+        <Setter Property="Fill" Value="{StaticResource Color.SoftGreen}"/>
+        <Setter Property="StrokeThickness" Value="1"/>
+        <Setter Property="Stroke" Value="{StaticResource Color.DarkCyan}"/>
+        <Setter Property="Points" Value="40,50, 70,20, 90,20, 60,50, 90,80, 70,80"/>
+    </Style>
+    <Style x:Key="NextArowPolygon" TargetType="Polygon">
+        <Setter Property="Fill" Value="{StaticResource Color.SoftGreen}"/>
+        <Setter Property="StrokeThickness" Value="1"/>
+        <Setter Property="Stroke" Value="{StaticResource Color.DarkCyan}"/>
+        <Setter Property="Points" Value="40,20, 60,20, 90,50, 60,80, 40,80, 70,50 "/>
+    </Style>
+
     <Style x:Key="closeButton" TargetType="Button">
         <Setter Property="Background" Value="{StaticResource Color.White}"/>
         <Setter Property="BorderThickness" Value="0"/>
@@ -360,6 +373,86 @@
             </Setter.Value>
         </Setter>
     </Style>
+    <Style x:Key="PrevPageBtn" TargetType="Button">
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="FontFamily" Value="{StaticResource monterrat}"/>
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="Padding" Value="60 0 0 0"/>
+        <Setter Property="BorderBrush" Value="{StaticResource Color.DarkCyan}"/>
+        <Setter Property="Background" Value="{StaticResource Color.DarkCyan}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Grid>
+                        <Polygon Style="{StaticResource PrevArowPolygon}" Fill="{TemplateBinding Background}" Stroke="{TemplateBinding BorderBrush}"/>
+                        <Polygon Style="{StaticResource PrevArowPolygon}" Fill="{TemplateBinding Background}" Stroke="{TemplateBinding BorderBrush}" Margin="30 0 0 0"/>
+                        <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Margin="{TemplateBinding Padding}"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <EventTrigger RoutedEvent="MouseEnter">
+                            <BeginStoryboard>
+                                <Storyboard Storyboard.TargetProperty="Background.Color">
+                                    <ColorAnimation To="#7EB693" Duration="0:0:0:1" SpeedRatio="2"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="MouseLeave">
+                            <BeginStoryboard>
+                                <Storyboard Storyboard.TargetProperty="Background.Color">
+                                    <ColorAnimation To="#274C5B" Duration="0:0:0:1" SpeedRatio="5"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Background" Value="{StaticResource Color.SoftGray}"/>
+                            <Setter Property="BorderBrush" Value="{StaticResource Color.LightGray}"/>
+                            <Setter Property="Foreground" Value="{StaticResource Color.LightGray}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="NextPageBtn" TargetType="Button">
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="FontFamily" Value="{StaticResource monterrat}"/>
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="Padding" Value="0 0 60 0"/>
+        <Setter Property="BorderBrush" Value="{StaticResource Color.DarkCyan}"/>
+        <Setter Property="Background" Value="{StaticResource Color.DarkCyan}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Grid>
+                        <Polygon Style="{StaticResource NextArowPolygon}" Fill="{TemplateBinding Background}" Stroke="{TemplateBinding BorderBrush}" Margin="0 0 30 0" HorizontalAlignment="Right"/>
+                        <Polygon Style="{StaticResource NextArowPolygon}" Fill="{TemplateBinding Background}" Stroke="{TemplateBinding BorderBrush}" Margin="0 0 60 0" HorizontalAlignment="Right"/>
+                        <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Margin="{TemplateBinding Padding}"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <EventTrigger RoutedEvent="MouseEnter">
+                            <BeginStoryboard>
+                                <Storyboard Storyboard.TargetProperty="Background.Color">
+                                    <ColorAnimation To="#7EB693" Duration="0:0:0:1" SpeedRatio="2"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="MouseLeave">
+                            <BeginStoryboard>
+                                <Storyboard Storyboard.TargetProperty="Background.Color">
+                                    <ColorAnimation To="#274C5B" Duration="0:0:0:1" SpeedRatio="5"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Background" Value="{StaticResource Color.SoftGray}"/>
+                            <Setter Property="BorderBrush" Value="{StaticResource Color.LightGray}"/>
+                            <Setter Property="Foreground" Value="{StaticResource Color.LightGray}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
 
     <Style x:Key="textBoxTitle" TargetType="TextBlock">
         <Setter Property="Foreground" Value="{StaticResource Color.DarkCyan}"/>
@@ -399,7 +492,7 @@
             </Trigger>
         </Style.Triggers>
     </Style>
-    
+
     <ControlTemplate x:Key="statButtonTemp1" TargetType="{x:Type Button}">
         <Grid>
             <Ellipse Fill="{StaticResource Color.SoftGray}" Stroke="{StaticResource Color.SoftGreen}" StrokeThickness="4" x:Name="theEllipse" Margin="4"/>

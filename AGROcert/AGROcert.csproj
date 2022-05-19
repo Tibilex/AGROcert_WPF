@@ -65,8 +65,35 @@
     <Compile Include="Windows\Pages\ContactUsPage.xaml.cs">
       <DependentUpon>ContactUsPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\Pages\Cookies\CookiePage1.xaml.cs">
+      <DependentUpon>CookiePage1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Pages\Cookies\CookiePage2.xaml.cs">
+      <DependentUpon>CookiePage2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Pages\Cookies\CookiePage3.xaml.cs">
+      <DependentUpon>CookiePage3.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Pages\Food\FoodPage1.xaml.cs">
+      <DependentUpon>FoodPage1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Pages\Food\FoodPage2.xaml.cs">
+      <DependentUpon>FoodPage2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Pages\Food\FoodPage3.xaml.cs">
+      <DependentUpon>FoodPage3.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\Pages\HomePage.xaml.cs">
       <DependentUpon>HomePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Pages\Juice\JuicePage1.xaml.cs">
+      <DependentUpon>JuicePage1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Pages\Juice\JuicePage2.xaml.cs">
+      <DependentUpon>JuicePage2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Pages\Juice\JuicePage3.xaml.cs">
+      <DependentUpon>JuicePage3.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\Pages\PagesPage.xaml.cs">
       <DependentUpon>PagesPage.xaml</DependentUpon>
@@ -102,7 +129,43 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Windows\Pages\Cookies\CookiePage1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Pages\Cookies\CookiePage2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Pages\Cookies\CookiePage3.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Pages\Food\FoodPage1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Pages\Food\FoodPage2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Pages\Food\FoodPage3.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Windows\Pages\HomePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Pages\Juice\JuicePage1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Pages\Juice\JuicePage2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Pages\Juice\JuicePage3.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
