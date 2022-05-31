@@ -1,5 +1,4 @@
 ﻿using AGROcert.ViewModels;
-using System;
 using System.Windows;
 using System.Windows.Controls;
 

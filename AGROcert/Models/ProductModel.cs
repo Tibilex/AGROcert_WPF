@@ -66,12 +66,7 @@ namespace AGROcert.Models
                 OnPropertyChanged("ImgSource");
             }
         }
-        
 
-        //public ProductModel()
-        //{
-
-        //}
         public ProductModel(string name, string type, int price, string category, ImageSource image)
         {
             ProductName = name;

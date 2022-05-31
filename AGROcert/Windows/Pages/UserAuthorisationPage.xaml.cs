@@ -16,11 +16,19 @@ using System.Windows.Shapes;
 namespace AGROcert.Windows.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для SignInRegistration.xaml
+    /// Логика взаимодействия для UserAuthorisationPage.xaml
     /// </summary>
-    public partial class SignInRegistration : Page
+    public partial class UserAuthorisationPage : Page
     {
-        public SignInRegistration()
+        private Frame _navigate;
+
+        public Frame Navigate
+        {
+            get { return _navigate; }
+            set { _navigate = value; }
+        }
+
+        public UserAuthorisationPage()
         {
             InitializeComponent();
         }

@@ -10,10 +10,12 @@
     <SolidColorBrush x:Key="Color.SoftGray" Color="#F1F1F1"/>
     <SolidColorBrush x:Key="Color.SoftGreen" Color="#7EB693"/>
     <SolidColorBrush x:Key="Color.SoftLime" Color="#EFF6F1"/>
+    <SolidColorBrush x:Key="Color.SoftOrange" Color="#fcae97"/>
     
     <SolidColorBrush x:Key="Color.LightGray" Color="#D4D4D4"/>
     <SolidColorBrush x:Key="Color.LightYellow" Color="#fdeca6"/>
     <SolidColorBrush x:Key="Color.LightBrown" Color="#e6d5b9"/>
+    <SolidColorBrush x:Key="Color.LightOrange" Color="#e37757"/>
 
     <LinearGradientBrush x:Key="Color.Gradient.OrangeLime" StartPoint="0.2,1" EndPoint="0.8,0">
         <GradientStop Color="#FFA858" Offset="0"/>
@@ -414,6 +416,55 @@
             </Setter.Value>
         </Setter>
     </Style>
+    <Style x:Key="SignInOutBtn" TargetType="Button">
+        <Setter Property="Background" Value="{StaticResource Color.LightOrange}"/>
+        <Setter Property="Foreground" Value="{StaticResource Color.DarkCyan}"/>
+        <Setter Property="FontFamily" Value="{StaticResource monterrat}"/>
+        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="FontWeight" Value="Regular"/>
+        <Setter Property="Width" Value="300"/>
+        <Setter Property="Height" Value="100"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border x:Name="border" CornerRadius="0" BorderBrush="{TemplateBinding Background}" BorderThickness="1" Background="{TemplateBinding Background}">
+                        <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <EventTrigger RoutedEvent="MouseEnter">
+                            <BeginStoryboard>
+                                <Storyboard Storyboard.TargetProperty="Background.Color">
+                                    <ColorAnimation To="#7EB693" Duration="0:0:0:1" SpeedRatio="2"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="MouseLeave">
+                            <BeginStoryboard>
+                                <Storyboard Storyboard.TargetProperty="Background.Color">
+                                    <ColorAnimation To="#e37757" Duration="0:0:0:1" SpeedRatio="5"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="MouseEnter">
+                            <BeginStoryboard>
+                                <Storyboard Storyboard.TargetProperty="Foreground.Color">
+                                    <ColorAnimation To="White" Duration="0:0:0:1" SpeedRatio="2"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="MouseLeave">
+                            <BeginStoryboard>
+                                <Storyboard Storyboard.TargetProperty="Foreground.Color">
+                                    <ColorAnimation To="#274C5B" Duration="0:0:0:1" SpeedRatio="5"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
     <Style x:Key="categoryBtn" TargetType="Button">
         <Setter Property="Background" Value="{StaticResource Color.SoftLime}"/>
         <Setter Property="BorderThickness" Value="0"/>
@@ -531,6 +582,22 @@
         <Setter Property="FontFamily" Value="{StaticResource monterrat}"/>
         <Setter Property="FontSize" Value="38"/>
     </Style>
+    <Style x:Key="UserdataTxtbox" TargetType="TextBox">
+        <Setter Property="Background" Value="{StaticResource Color.Salad}"/>
+        <Setter Property="Foreground" Value="{StaticResource Color.DarkCyan}"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Padding" Value="20 0 0 0"/>
+        <Setter Property="FontFamily" Value="{StaticResource monterrat}"/>
+        <Setter Property="FontSize" Value="24"/>
+    </Style>
+    <Style x:Key="UserdataPassBox" TargetType="PasswordBox">
+        <Setter Property="Background" Value="{StaticResource Color.Salad}"/>
+        <Setter Property="Foreground" Value="{StaticResource Color.DarkCyan}"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Padding" Value="20 0 0 0"/>
+        <Setter Property="FontFamily" Value="{StaticResource monterrat}"/>
+        <Setter Property="FontSize" Value="24"/>
+    </Style>
 
     <Style x:Key="cartBorder" TargetType="Border">
         <Setter Property="CornerRadius" Value="35"/>
@@ -556,6 +623,18 @@
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
+    </Style>
+    <Style x:Key="GroupBoxStyleLogin" TargetType="GroupBox">
+        <Setter Property="Foreground" Value="{StaticResource Color.DarkCyan}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource Color.SoftGreen}"/>
+        <Setter Property="Background" Value="{StaticResource Color.LightYellow}"/>
+        <Setter Property="Width" Value="400"/>
+    </Style>
+    <Style x:Key="GroupBoxStyleRegistr" TargetType="GroupBox">
+        <Setter Property="Foreground" Value="{StaticResource Color.DarkCyan}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource Color.SoftGreen}"/>
+        <Setter Property="Background" Value="{StaticResource Color.LightYellow}"/>
+        <Setter Property="Width" Value="300"/>
     </Style>
 
     <ControlTemplate x:Key="statButtonTemp1" TargetType="{x:Type Button}">

@@ -4,19 +4,8 @@ using AGROcert.Windows.Pages.Cookies;
 using AGROcert.Windows.Pages.Food;
 using AGROcert.Windows.Pages.Juice;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace AGROcert
 {
@@ -31,15 +20,15 @@ namespace AGROcert
         private ShopPage _shopPage;
         private CategoryPage _categoryPage;
         private ContactUsPage _contactUsPage;
-
         private KernelsPage _kernelsPage;
         private FoodPage _foodPage;
         private FructsPage _fruitsPage;
+        private UserAuthorisationPage _userAuthorisationPage;
+        private AccountManagmentPage _accountManagmentPage;
 
         public MainWindow()
         {
             InitializeComponent();
-            DataContext = new MainWindowViewModel();
             s_window = this;
 
             _homePage = new HomePage();
@@ -47,6 +36,8 @@ namespace AGROcert
             _shopPage = new ShopPage();
             _contactUsPage = new ContactUsPage();
             _categoryPage = new CategoryPage();
+            _userAuthorisationPage = new UserAuthorisationPage();
+            _accountManagmentPage = new AccountManagmentPage();
 
             _kernelsPage = new KernelsPage(); 
             _foodPage = new FoodPage();
@@ -63,6 +54,9 @@ namespace AGROcert
             _homePage.Navigate = progpamPages;
             _aboutPage.Page = _shopPage;
             _homePage.Page = _aboutPage;
+
+            _userAuthorisationPage.Navigate = progpamPages;
+            _accountManagmentPage.Navigate = progpamPages;
 
             _categoryPage.Navigate = progpamPages;
             _categoryPage.FoodPage = _foodPage;
@@ -127,7 +121,7 @@ namespace AGROcert
 
         private void SignIn_Click(object sender, RoutedEventArgs e)
         {
-
+            progpamPages.Navigate(_userAuthorisationPage);
         }
     }
 }
