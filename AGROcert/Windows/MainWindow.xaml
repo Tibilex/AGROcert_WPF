@@ -28,11 +28,14 @@
                 <Grid Grid.Row="0">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="50"/>
                         <ColumnDefinition Width="60"/>
                         <ColumnDefinition Width="60"/>
                     </Grid.ColumnDefinitions>
-                    <Button Grid.Column="1" Style="{StaticResource minimiseButton}" Click="MinimiseWindow_Click" Margin="20 10 00 10"/>
-                    <Button Grid.Column="2" Style="{StaticResource closeButton}" Click="CloseWindow_Click"/>
+                    <Button Grid.Column="1" x:Name="signIn" Style="{StaticResource signInBtn}" Content="Вход" Click="SignIn_Click"/>
+                    <Button Grid.Column="3" Style="{StaticResource minimiseButton}" Click="MinimiseWindow_Click" Margin="20 10 00 10"/>
+                    <Button Grid.Column="4" Style="{StaticResource closeButton}" Click="CloseWindow_Click"/>
                 </Grid>
                 <Image Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" Source="/Resources/Icons/logo.png" HorizontalAlignment="Left" Margin="20 20 0 0"/>
                 <Grid Grid.Row="1">

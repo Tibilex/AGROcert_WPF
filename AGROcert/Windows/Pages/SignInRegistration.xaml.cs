@@ -1,5 +1,4 @@
-﻿using AGROcert.ViewModels;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,15 +16,13 @@ using System.Windows.Shapes;
 namespace AGROcert.Windows.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для ShopPage.xaml
+    /// Логика взаимодействия для SignInRegistration.xaml
     /// </summary>
-    public partial class ShopPage : Page
+    public partial class SignInRegistration : Page
     {
-
-        public ShopPage()
+        public SignInRegistration()
         {
             InitializeComponent();
-            DataContext = new ShopViewModel();
-        }           
+        }
     }
 }

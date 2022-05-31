@@ -1,24 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using AGROcert.ViewModels;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
-namespace AGROcert.Windows.Pages.Juice
+namespace AGROcert.Windows.Pages.Cookies
 {
     /// <summary>
-    /// Логика взаимодействия для JuicePage3.xaml
+    /// Логика взаимодействия для KernelsPage.xaml
     /// </summary>
-    public partial class JuicePage3 : Page
+    public partial class KernelsPage : Page
     {
         private Frame _navigate;
         public Frame Navigate
@@ -34,9 +23,10 @@ namespace AGROcert.Windows.Pages.Juice
             set { _page = value; }
         }
 
-        public JuicePage3()
+        public KernelsPage()
         {
             InitializeComponent();
+            DataContext = new KernelsViewModel();
         }
 
         private void PrevPageBtn_Click(object sender, RoutedEventArgs e)

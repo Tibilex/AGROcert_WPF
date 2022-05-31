@@ -32,21 +32,14 @@ namespace AGROcert
         private CategoryPage _categoryPage;
         private ContactUsPage _contactUsPage;
 
-        private CookiePage1 _cookiePage1;
-        private CookiePage2 _cookiePage2;
-        private CookiePage3 _cookiePage3;
-
-        private FoodPage1 _foodPage1;
-        private FoodPage2 _foodPage2;
-        private FoodPage3 _foodPage3;
-
-        private JuicePage1 _juicePage1;
-        private JuicePage2 _juicePage2;
-        private JuicePage3 _juicePage3;
+        private KernelsPage _kernelsPage;
+        private FoodPage _foodPage;
+        private FructsPage _fruitsPage;
 
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = new MainWindowViewModel();
             s_window = this;
 
             _homePage = new HomePage();
@@ -55,17 +48,9 @@ namespace AGROcert
             _contactUsPage = new ContactUsPage();
             _categoryPage = new CategoryPage();
 
-            _cookiePage1 = new CookiePage1();
-            _cookiePage2 = new CookiePage2();
-            _cookiePage3 = new CookiePage3();
-
-            _foodPage1 = new FoodPage1();
-            _foodPage2 = new FoodPage2();
-            _foodPage3 = new FoodPage3();
-
-            _juicePage1 = new JuicePage1();
-            _juicePage2 = new JuicePage2();
-            _juicePage3 = new JuicePage3();
+            _kernelsPage = new KernelsPage(); 
+            _foodPage = new FoodPage();
+            _fruitsPage = new FructsPage();
 
             progpamPages.Navigate(_homePage);
 
@@ -80,30 +65,16 @@ namespace AGROcert
             _homePage.Page = _aboutPage;
 
             _categoryPage.Navigate = progpamPages;
-            _categoryPage.PageFood = _foodPage1;
-            _categoryPage.PageJuice = _juicePage1;
-            _categoryPage.PageCookie = _cookiePage1;
+            _categoryPage.FoodPage = _foodPage;
+            _categoryPage.FruitsPage = _fruitsPage;
+            _categoryPage.KernelsPage = _kernelsPage;
 
-            _foodPage1.Navigate = progpamPages;
-            _foodPage2.Navigate = progpamPages;
-            _foodPage3.Navigate = progpamPages;
-            _foodPage1.Page = _foodPage2;
-            _foodPage2.Page = _foodPage3;
-            _foodPage3.Page = _foodPage2;
+            _foodPage.Navigate = progpamPages;
+            _fruitsPage.Navigate = progpamPages;
+            _kernelsPage.Navigate = progpamPages;
 
-            _juicePage1.Navigate = progpamPages;
-            _juicePage2.Navigate = progpamPages;
-            _juicePage3.Navigate = progpamPages;
-            _juicePage1.Page = _juicePage2;
-            _juicePage2.Page = _juicePage3;
-            _juicePage3.Page = _juicePage2;
-
-            _cookiePage1.Navigate = progpamPages;
-            _cookiePage2.Navigate = progpamPages;
-            _cookiePage3.Navigate = progpamPages;
-            _cookiePage1.Page = _cookiePage2;
-            _cookiePage2.Page = _cookiePage3;
-            _cookiePage3.Page = _cookiePage2;
+            _foodPage.Page = _fruitsPage;
+            _fruitsPage.Page = _kernelsPage;
         }
 
         private void CloseWindow_Click(object sender, EventArgs e)
@@ -152,6 +123,11 @@ namespace AGROcert
         private void ContactsBtn_Click(object sender, RoutedEventArgs e)
         {
             progpamPages.Navigate(_contactUsPage);
+        }
+
+        private void SignIn_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

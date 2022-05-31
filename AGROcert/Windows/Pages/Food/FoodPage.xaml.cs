@@ -1,24 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using AGROcert.ViewModels;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-
-namespace AGROcert.Windows.Pages.Cookies
+namespace AGROcert.Windows.Pages.Food
 {
     /// <summary>
-    /// Логика взаимодействия для CookiePage1.xaml
+    /// Логика взаимодействия для FoodPage.xaml
     /// </summary>
-    public partial class CookiePage1 : Page
+    public partial class FoodPage : Page
     {
         private Frame _navigate;
         public Frame Navigate
@@ -34,9 +22,10 @@ namespace AGROcert.Windows.Pages.Cookies
             set { _page = value; }
         }
 
-        public CookiePage1()
+        public FoodPage()
         {
             InitializeComponent();
+            DataContext = new FoodViewModel();
         }
 
         private void NextPageBtn_Click(object sender, RoutedEventArgs e)

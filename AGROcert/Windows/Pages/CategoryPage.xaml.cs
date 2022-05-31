@@ -27,22 +27,22 @@ namespace AGROcert.Windows.Pages
             set { _navigate = value; }
         }
         private Page _pageFood;
-        public Page PageFood
+        public Page FoodPage
         {
             get { return _pageFood; }
             set { _pageFood = value; }
         }
-        private Page _pageJuice;
-        public Page PageJuice
+        private Page _fruitsPage;
+        public Page FruitsPage
         {
-            get { return _pageJuice; }
-            set { _pageJuice = value; }
+            get { return _fruitsPage; }
+            set { _fruitsPage = value; }
         }
-        private Page _pageCookie;
-        public Page PageCookie
+        private Page _kernelsPage;
+        public Page KernelsPage
         {
-            get { return _pageCookie; }
-            set { _pageCookie = value; }
+            get { return _kernelsPage; }
+            set { _kernelsPage = value; }
         }
 
         public CategoryPage()
@@ -52,17 +52,17 @@ namespace AGROcert.Windows.Pages
 
         private void foodCategoryBtn_Click(object sender, RoutedEventArgs e)
         {
-            Navigate.Navigate(PageFood);
+            Navigate.Navigate(FoodPage);
         }
 
         private void juiceCategoryBtn_Click(object sender, RoutedEventArgs e)
         {
-            Navigate.Navigate(PageJuice);
+            Navigate.Navigate(FruitsPage);
         }
 
         private void cookiesCategoryBtn_Click(object sender, RoutedEventArgs e)
         {
-            Navigate.Navigate(PageCookie);
+            Navigate.Navigate(KernelsPage);
         }
     }
 }

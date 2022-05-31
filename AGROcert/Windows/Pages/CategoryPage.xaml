@@ -14,13 +14,13 @@
 
     <Grid Background="{StaticResource Color.SoftLime}">
         <Grid.RowDefinitions>
-            <RowDefinition Height="100"/>
+            <RowDefinition Height="120"/>
             <RowDefinition/>
             <RowDefinition Height="100"/>
         </Grid.RowDefinitions>
 
         <Grid Grid.Row="0">
-            <TextBlock Text="Предлагаем категорию" Style="{StaticResource textBoxTitle}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 20 0 0"/>
+            <TextBlock Text="Предлагаем категорию" Style="{StaticResource textBoxTitle}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 0 0 0"/>
         </Grid>
         
         <Grid Grid.Row="1">
@@ -36,8 +36,8 @@
             <Button Grid.Column="2" Content="{StaticResource juiceCategory}" Style="{StaticResource categoryBtn}"/>
             <Button Grid.Column="4" Content="{StaticResource cookiesCategory}" Style="{StaticResource categoryBtn}"/>
             <Button Grid.Column="0" Content="Органическая Еда" Style="{StaticResource categoryInnerBtn}" x:Name="foodCategoryBtn" Click="foodCategoryBtn_Click"/>
-            <Button Grid.Column="2" Content="Фруктовые Соки" Style="{StaticResource categoryInnerBtn}" x:Name="juiceCategoryBtn" Click="juiceCategoryBtn_Click"/>
-            <Button Grid.Column="4" Content="Ореховое печенье" Style="{StaticResource categoryInnerBtn}" x:Name="cookiesCategoryBtn" Click="cookiesCategoryBtn_Click"/>
+            <Button Grid.Column="2" Content="Фрукты" Style="{StaticResource categoryInnerBtn}" x:Name="juiceCategoryBtn" Click="juiceCategoryBtn_Click"/>
+            <Button Grid.Column="4" Content="Орехи и Семечки" Style="{StaticResource categoryInnerBtn}" x:Name="cookiesCategoryBtn" Click="cookiesCategoryBtn_Click"/>
         </Grid>
     </Grid>
 </Page>

@@ -55,7 +55,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Models\ProductModel.cs" />
+    <Compile Include="ViewModels\FoodViewModel.cs" />
+    <Compile Include="ViewModels\FruitsViewModel.cs" />
+    <Compile Include="ViewModels\KernelsViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
+    <Compile Include="ViewModels\ShopViewModel.cs" />
     <Compile Include="Windows\Controls\ProductItem.xaml.cs">
       <DependentUpon>ProductItem.xaml</DependentUpon>
     </Compile>
@@ -65,41 +70,29 @@
     <Compile Include="Windows\Pages\ContactUsPage.xaml.cs">
       <DependentUpon>ContactUsPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Windows\Pages\Cookies\CookiePage1.xaml.cs">
-      <DependentUpon>CookiePage1.xaml</DependentUpon>
+    <Compile Include="Windows\Pages\Kernels\KernelsPage.xaml.cs">
+      <DependentUpon>KernelsPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Windows\Pages\Cookies\CookiePage2.xaml.cs">
-      <DependentUpon>CookiePage2.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Windows\Pages\Cookies\CookiePage3.xaml.cs">
-      <DependentUpon>CookiePage3.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Windows\Pages\Food\FoodPage1.xaml.cs">
-      <DependentUpon>FoodPage1.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Windows\Pages\Food\FoodPage2.xaml.cs">
-      <DependentUpon>FoodPage2.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Windows\Pages\Food\FoodPage3.xaml.cs">
-      <DependentUpon>FoodPage3.xaml</DependentUpon>
+    <Compile Include="Windows\Pages\Food\FoodPage.xaml.cs">
+      <DependentUpon>FoodPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\Pages\HomePage.xaml.cs">
       <DependentUpon>HomePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Windows\Pages\Juice\JuicePage1.xaml.cs">
-      <DependentUpon>JuicePage1.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Windows\Pages\Juice\JuicePage2.xaml.cs">
-      <DependentUpon>JuicePage2.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Windows\Pages\Juice\JuicePage3.xaml.cs">
-      <DependentUpon>JuicePage3.xaml</DependentUpon>
+    <Compile Include="Windows\Pages\Fructs\FructsPage.xaml.cs">
+      <DependentUpon>FructsPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\Pages\CategoryPage.xaml.cs">
       <DependentUpon>CategoryPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\Pages\ShopPage.xaml.cs">
       <DependentUpon>ShopPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Pages\SignInPage.xaml.cs">
+      <DependentUpon>SignInPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Pages\SignInRegistration.xaml.cs">
+      <DependentUpon>SignInRegistration.xaml</DependentUpon>
     </Compile>
     <Page Include="Styles\ControlsStyles.xaml">
       <SubType>Designer</SubType>
@@ -129,27 +122,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Windows\Pages\Cookies\CookiePage1.xaml">
+    <Page Include="Windows\Pages\Kernels\KernelsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Windows\Pages\Cookies\CookiePage2.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Windows\Pages\Cookies\CookiePage3.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Windows\Pages\Food\FoodPage1.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Windows\Pages\Food\FoodPage2.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Windows\Pages\Food\FoodPage3.xaml">
+    <Page Include="Windows\Pages\Food\FoodPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -157,15 +134,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Windows\Pages\Juice\JuicePage1.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Windows\Pages\Juice\JuicePage2.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Windows\Pages\Juice\JuicePage3.xaml">
+    <Page Include="Windows\Pages\Fructs\FructsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -174,6 +143,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\Pages\ShopPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Pages\SignInPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Pages\SignInRegistration.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -238,9 +215,7 @@
     <Resource Include="Resources\Icons\aboutUs2.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Image\cookiesCategory.png" />
-    <Resource Include="Resources\Image\foodCategory.png" />
-    <Resource Include="Resources\Image\juiceCategory.png" />
+    <Resource Include="Resources\Image\Categorys\foodCategory.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Image\Products\almond.png" />
@@ -262,6 +237,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Icons\fiber.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\Categorys\nutCategory.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\Categorys\fruitsCategory.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

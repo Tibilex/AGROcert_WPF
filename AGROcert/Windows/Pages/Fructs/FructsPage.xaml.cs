@@ -1,24 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using AGROcert.ViewModels;
+using System;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
-namespace AGROcert.Windows.Pages.Cookies
+namespace AGROcert.Windows.Pages.Juice
 {
     /// <summary>
-    /// Логика взаимодействия для CookiePage3.xaml
+    /// Логика взаимодействия для FructsPage.xaml
     /// </summary>
-    public partial class CookiePage3 : Page
+    public partial class FructsPage : Page
     {
         private Frame _navigate;
         public Frame Navigate
@@ -34,11 +24,15 @@ namespace AGROcert.Windows.Pages.Cookies
             set { _page = value; }
         }
 
-        public CookiePage3()
+        public FructsPage()
         {
             InitializeComponent();
+            DataContext = new FruitsViewModel();
         }
-
+        private void NextPageBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Navigate.Navigate(Page);
+        }
         private void PrevPageBtn_Click(object sender, RoutedEventArgs e)
         {
             Navigate.GoBack();
