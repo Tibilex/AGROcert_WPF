@@ -38,21 +38,22 @@
                 </Grid.RowDefinitions>
                 <Image Grid.Row="0" Grid.RowSpan="10" Grid.ColumnSpan="2" Panel.ZIndex="0" Source="/Resources/Image/apricot.jpg" Opacity="0.6" Stretch="Fill" RenderOptions.BitmapScalingMode="Fant"/>
                 <TextBlock Grid.Row="0" Text="Вход в аккаунт" Style="{StaticResource textBoxContasTitle}" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+                <TextBlock Grid.Row="1" Text="Создав учётную запись на нашем сайте, вы будете тратить меньше времени на оформление заказа, сможете хранить несколько адресов доставки, отслеживать состояние заказов, а также многое другое." Style="{StaticResource textBoxRegular}" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap"/>
                 <GroupBox Grid.Row="2" Style="{StaticResource GroupBoxStyleLogin}" Header="EMAIL" BorderThickness="1 1 1 0">
-                    <TextBox Style="{StaticResource UserdataTxtbox}"/>
+                    <TextBox Style="{StaticResource UserdataTxtbox}" x:Name="loginEmailTextBox"/>
                 </GroupBox>
                 <GroupBox Grid.Row="3" Style="{StaticResource GroupBoxStyleLogin}" BorderThickness="1 0 1 1" Margin="0 -4 0 0">
-                    <TextBlock Text="{Binding InvalidEmail}" Style="{StaticResource textBoxRegular}" VerticalAlignment="Center" Foreground="#b9320a"/>
+                    <TextBlock x:Name="inavalidEmail" Style="{StaticResource textBoxRegular}" VerticalAlignment="Center" Foreground="#b9320a"/>
                 </GroupBox>
 
                 <GroupBox Grid.Row="5" Style="{StaticResource GroupBoxStyleLogin}" Header="ПАРОЛЬ" BorderThickness="1 1 1 0" >
-                    <PasswordBox Style="{StaticResource UserdataPassBox}"/>
+                    <PasswordBox Style="{StaticResource UserdataPassBox}" x:Name="passwordEmailTextBox"/>
                 </GroupBox>
                 <GroupBox Grid.Row="6" Style="{StaticResource GroupBoxStyleLogin}"  BorderThickness="1 0 1 1" Margin="0 -4 0 0">
-                    <TextBlock Text="{Binding InvalidPassword}" Style="{StaticResource textBoxRegular}" VerticalAlignment="Center" Foreground="#b9320a"/>
+                    <TextBlock x:Name="invalidPassword" Style="{StaticResource textBoxRegular}" VerticalAlignment="Center" Foreground="#b9320a"/>
                 </GroupBox>
 
-                <Button Grid.Row="7" Style="{StaticResource SignInOutBtn}" Content="Вход"/>
+                <Button Grid.Row="7" Style="{StaticResource SignInOutBtn}" Content="Вход" Click="LoginButton_Click"/>
             </Grid> <!-- Login Grid -->
         </Border>
         <Border Grid.Row="1" Grid.Column="1" BorderBrush="{StaticResource Color.SoftGreen}" BorderThickness="1 1 0 0">
@@ -74,39 +75,41 @@
                 </Grid.RowDefinitions>
                 <Image Grid.Row="0" Grid.RowSpan="10" Grid.ColumnSpan="2" Panel.ZIndex="0" Source="/Resources/Image/apricotR.png" Stretch="Fill" Opacity="0.6" RenderOptions.BitmapScalingMode="Fant"/>
                 <TextBlock Grid.Row="0" Grid.ColumnSpan="2" Text="Регистрация нового пользователя" Style="{StaticResource textBoxContasTitle}" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+                <TextBlock Grid.Row="1" Grid.ColumnSpan="2" Text="Если у вас есть учётная запись на нашем сайте, пожалуйста, авторизируйтесь." 
+                           Style="{StaticResource textBoxRegular}" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap"/>
                 <GroupBox Grid.Row="2" Grid.Column="0" Style="{StaticResource GroupBoxStyleRegistr}" Header="Имя" BorderThickness="1 1 1 1">
-                    <TextBox Style="{StaticResource UserdataTxtbox}"/>
+                    <TextBox Style="{StaticResource UserdataTxtbox}" x:Name="userName"/>
                 </GroupBox>
                 <GroupBox Grid.Row="3" Grid.Column="0" Style="{StaticResource GroupBoxStyleRegistr}" BorderThickness="1 0 1 1" Margin="0 -4 0 0">
-                    <TextBlock Text="{Binding InvalidEmail}" Style="{StaticResource textBoxRegular}" VerticalAlignment="Center" Foreground="#b9320a"/>
+                    <TextBlock Text="Не обязательно" Style="{StaticResource textBoxRegular}" VerticalAlignment="Center"/>
                 </GroupBox>
                 <GroupBox Grid.Row="5" Grid.Column="0" Style="{StaticResource GroupBoxStyleRegistr}" Header="Фамилия" BorderThickness="1 1 1 1">
-                    <TextBox Style="{StaticResource UserdataTxtbox}"/>
+                    <TextBox Style="{StaticResource UserdataTxtbox}" x:Name="userSurname"/>
                 </GroupBox>
                 <GroupBox Grid.Row="6" Grid.Column="0" Style="{StaticResource GroupBoxStyleRegistr}" BorderThickness="1 0 1 1" Margin="0 -4 0 0">
-                    <TextBlock Text="{Binding InvalidEmail}" Style="{StaticResource textBoxRegular}" VerticalAlignment="Center" Foreground="#b9320a"/>
+                    <TextBlock Text="Не обязательно" Style="{StaticResource textBoxRegular}" VerticalAlignment="Center"/>
                 </GroupBox>
                 <GroupBox Grid.Row="7" Grid.Column="0" Style="{StaticResource GroupBoxStyleRegistr}" Height="80" Header="Телефон" BorderThickness="1 1 1 1">
-                    <TextBox Style="{StaticResource UserdataTxtbox}"/>
+                    <TextBox Style="{StaticResource UserdataTxtbox}" x:Name="userPhone"/>
                 </GroupBox>
                 <GroupBox Grid.Row="7" Grid.Column="0" Style="{StaticResource GroupBoxStyleRegistr}" BorderThickness="1 0 1 1" Margin="0 108 0 8">
-                    <TextBlock Text="{Binding InvalidEmail}" Style="{StaticResource textBoxRegular}" VerticalAlignment="Center" Foreground="#b9320a"/>
+                    <TextBlock Text="Не обязательно" Style="{StaticResource textBoxRegular}" VerticalAlignment="Center"/>
                 </GroupBox>
 
-                <GroupBox Grid.Row="2" Grid.Column="1" Style="{StaticResource GroupBoxStyleRegistr}" Header="EMAIL" BorderThickness="1 1 1 0">
-                    <TextBox Style="{StaticResource UserdataTxtbox}"/>
+                <GroupBox Grid.Row="2" Grid.Column="1" Style="{StaticResource GroupBoxStyleRegistr}" Header="EMAIL - Обязательное поле" BorderThickness="1 1 1 0">
+                    <TextBox Style="{StaticResource UserdataTxtbox}" x:Name="userEmail"/>
                 </GroupBox>
                 <GroupBox Grid.Row="3" Grid.Column="1" Style="{StaticResource GroupBoxStyleRegistr}" BorderThickness="1 0 1 1" Margin="0 -4 0 0">
-                    <TextBlock Text="{Binding InvalidEmail}" Style="{StaticResource textBoxRegular}" VerticalAlignment="Center" Foreground="#b9320a"/>
+                    <TextBlock Text="Обязательное Поле" x:Name="requiredEmail" Style="{StaticResource textBoxRegular}" VerticalAlignment="Center" Foreground="#b9320a"/>
                 </GroupBox>
-                <GroupBox Grid.Row="5" Grid.Column="1" Style="{StaticResource GroupBoxStyleRegistr}" Header="ПАРОЛЬ" BorderThickness="1 1 1 0" >
-                    <TextBox Style="{StaticResource UserdataTxtbox}"/>
+                <GroupBox Grid.Row="5" Grid.Column="1" Style="{StaticResource GroupBoxStyleRegistr}" Header="ПАРОЛЬ - Обязательное поле" BorderThickness="1 1 1 0" >
+                    <TextBox Style="{StaticResource UserdataTxtbox}" x:Name="userPassword"/>
                 </GroupBox>
                 <GroupBox Grid.Row="6" Grid.Column="1" Style="{StaticResource GroupBoxStyleRegistr}"  BorderThickness="1 0 1 1" Margin="0 -4 0 0">
-                    <TextBlock Text="{Binding InvalidPassword}" Style="{StaticResource textBoxRegular}" VerticalAlignment="Center" Foreground="#b9320a"/>
+                    <TextBlock Text="Обязательное Поле" x:Name="requiredPass" Style="{StaticResource textBoxRegular}" VerticalAlignment="Center" Foreground="#b9320a"/>
                 </GroupBox>
 
-                <Button Grid.Row="8" Style="{StaticResource SignInOutBtn}" Content="Регистрация"/>
+                <Button Grid.Row="8" Style="{StaticResource SignInOutBtn}" Content="Регистрация" Click="RegistrationButton_Click"/>
             </Grid> <!-- Registration Grid -->
         </Border>
             

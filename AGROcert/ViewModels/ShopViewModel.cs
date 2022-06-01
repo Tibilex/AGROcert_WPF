@@ -34,7 +34,7 @@ namespace AGROcert.ViewModels
                 object productType = dataReader.GetValue(1);
                 object price = dataReader.GetValue(2);
                 object category = dataReader.GetValue(3);
-                byte[] img = (byte[])dataReader.GetValue(4);
+                var img = (byte[])dataReader.GetValue(4);
 
                 ImageSource productImage = null;
 

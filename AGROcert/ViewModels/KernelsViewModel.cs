@@ -24,7 +24,7 @@ namespace AGROcert.ViewModels
         private void GetDataInDataBase()
         {
             SqlConnection connection = new SqlConnection(_connectionString);
-            SqlCommand command = new SqlCommand("SELECT ProductName, ProductType, Price, Category, Image FROM Products WHERE Category  = 'Kernels'", connection);
+            SqlCommand command = new SqlCommand("SELECT ProductName, ProductType, Price, Category, Image FROM Products WHERE Category  = 'Kernel'", connection);
             connection.Open();
             SqlDataReader dataReader = command.ExecuteReader();
 

@@ -57,6 +57,8 @@ namespace AGROcert
 
             _userAuthorisationPage.Navigate = progpamPages;
             _accountManagmentPage.Navigate = progpamPages;
+            _userAuthorisationPage.Page = _homePage;
+            _userAuthorisationPage.AdminPage = _accountManagmentPage;
 
             _categoryPage.Navigate = progpamPages;
             _categoryPage.FoodPage = _foodPage;
