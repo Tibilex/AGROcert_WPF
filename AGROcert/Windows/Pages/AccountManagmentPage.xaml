@@ -3,12 +3,153 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:AGROcert.Windows.Pages"
+      xmlns:local="clr-namespace:AGROcert.Windows.Pages" xmlns:viewmodels="clr-namespace:AGROcert.ViewModels" xmlns:models="clr-namespace:AGROcert.Models" d:DataContext="{d:DesignInstance Type=models:ProductModel}"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="AccountManagmentPage">
-
+    
+    <Page.Resources>
+        <ResourceDictionary Source="/Styles/ControlsStyles.xaml"/>
+    </Page.Resources>
+    
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Background="{StaticResource Color.Salad}">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="30"/>
+            </Grid.RowDefinitions>
+            <TextBlock  Grid.Row="0" Style="{StaticResource textBoxTitle}" Text="Учетная запись" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+            <TextBlock Grid.Row="1" Style="{StaticResource textBoxRegular}" Text="Администратор" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 0 0 10"/>
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="340"/>
+                <ColumnDefinition Width="340"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Border BorderBrush="{StaticResource Color.SoftGreen}" BorderThickness="0 1 1 0">
+                <Grid Grid.Column="0" Background="{StaticResource Color.SoftOrange}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="70"/>
+                        <RowDefinition Height="70"/>
+                        <RowDefinition Height="70"/>
+                        <RowDefinition Height="70"/>
+                        <RowDefinition Height="80"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Grid.Row="0" Style="{StaticResource textBoxRegular}" Text="Личные данные" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0 10 0 0"/>
+                    <TextBlock Grid.Row="1" Style="{StaticResource textBoxRegular}" Text="Имя" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10 10 0 0"/>
+                    <TextBlock Grid.Row="1" Style="{StaticResource textBoxRegular}" Foreground="White" Text="{Binding AdmName}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10 40 0 0"/>
+                    <TextBlock Grid.Row="2" Style="{StaticResource textBoxRegular}" Text="Фамилия" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10 10 0 0"/>
+                    <TextBlock Grid.Row="2" Style="{StaticResource textBoxRegular}" Foreground="White" Text="{Binding AdmSurname}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10 40 0 0"/>
+                    <TextBlock Grid.Row="3" Style="{StaticResource textBoxRegular}" Text="Номер телефона" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10 10 0 0"/>
+                    <TextBlock Grid.Row="3" Style="{StaticResource textBoxRegular}" Foreground="White" Text="{Binding AdmPhone}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10 40 0 0"/>
+                    <TextBlock Grid.Row="4" Style="{StaticResource textBoxRegular}" Text="Улектронная почта" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10 10 0 0"/>
+                    <TextBlock Grid.Row="4" Style="{StaticResource textBoxRegular}" Foreground="White" Text="{Binding AdmEmail}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10 40 0 0"/>
+                    <TextBlock Grid.Row="5" Style="{StaticResource textBoxRegular}" Text="Ссылка на проект" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10 10 0 0"/>
+                    <TextBlock Grid.Row="5" Style="{StaticResource textBoxRegular}" HorizontalAlignment="Left" Margin="10 14 0 0">
+                        <Hyperlink x:Name="gitLink" Click="gitLink_Click" Foreground="White">Github</Hyperlink>
+                    </TextBlock>
+                </Grid>
+            </Border>
+
+            <Border Grid.Column="1" BorderBrush="{StaticResource Color.SoftGreen}" BorderThickness="0 1 1 0">
+                <Grid Background="{StaticResource Color.LightYellow}" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="80"/>
+                        <RowDefinition Height="80"/>
+                        <RowDefinition Height="80"/>
+                        <RowDefinition Height="80"/>
+                        <RowDefinition Height="80"/>
+                        <RowDefinition Height="80"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Grid.Row="0" Style="{StaticResource textBoxRegular}" Text="Добавить товар" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0 10 0 0"/>
+                    <TextBlock Grid.Row="1" Text="Название Продукта" Style="{StaticResource textBoxRegular}" VerticalAlignment="Top" Margin="20 10 0 0"/>
+                    <TextBox Grid.Row="1" Margin="20 40 20 0" x:Name="addProductName" Style="{StaticResource UserdataTxtbox}"/>
+                    <TextBlock Grid.Row="2" Text="Тип продукта(Oвощь, Фрукт, Орех)" Style="{StaticResource textBoxRegular}" VerticalAlignment="Top" Margin="20 10 0 0"/>
+                    <TextBox Grid.Row="2" Margin="20 40 20 0" x:Name="addProductType" Style="{StaticResource UserdataTxtbox}"/>
+                    <TextBlock Grid.Row="3" Text="Цена Продукта" Style="{StaticResource textBoxRegular}" VerticalAlignment="Top" Margin="20 10 0 0"/>
+                    <TextBox Grid.Row="3" Margin="20 40 20 0" x:Name="addProductPrice" Style="{StaticResource UserdataTxtbox}"/>
+                    <TextBlock Grid.Row="4" Text="Категория(Vegetable, Fruit, Kernel)" Style="{StaticResource textBoxRegular}" VerticalAlignment="Top" Margin="20 10 0 0"/>
+                    <TextBox Grid.Row="4" Margin="20 40 20 0" x:Name="addProductCategory" Style="{StaticResource UserdataTxtbox}"/>
+                    <Button Grid.Row="5" Style="{StaticResource SignInOutBtn}" Margin="0 10 0 0" Padding="0 0 0 30" Content="Загрузить изображение" x:Name="addImage" Click="AddImageButton_Click"/>
+                    <Button Grid.Row="6" Style="{StaticResource SignInOutBtn}" Margin="0 10 0 0" Padding="0 0 0 30" Content="Добавить товар в базу" x:Name="addToBase" Click="AddToBaseButton_Click"/>
+                    <TextBlock Grid.Row="7" Style="{StaticResource textBoxRegular}" Margin="0 20 0 0" Padding="0 0 0 30" Text="Успешно добавлено" x:Name="addReport" VerticalAlignment="Top" HorizontalAlignment="Center" Visibility="Hidden"/>
+                </Grid>
+             </Border>
+
+            <Border Grid.Column="2" BorderBrush="{StaticResource Color.SoftGreen}" BorderThickness="0 1 0 0">
+                <Grid Background="{StaticResource Color.LightYellow}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="80"/>
+                        <RowDefinition Height="80"/>
+                        <RowDefinition Height="80"/>
+                        <RowDefinition Height="80"/>
+                        <RowDefinition Height="20"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    
+                    <TextBlock Grid.Row="0" Grid.Column="1" Style="{StaticResource textBoxRegular}" Text="Список всех товаров" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0 10 0 0"/>
+                    <TextBlock Grid.Row="1" Grid.Column="0" Style="{StaticResource textBoxRegular}" Text="Сортировка по категориям" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0 20 0 0"/>
+                    <Button Grid.Row="2" Grid.Column="0"  Style="{StaticResource SignInOutBtn}" Margin="0 10 0 0" Padding="0 0 0 30" Content="Овощи" x:Name="sortToName" Click="sortToName_Click"/>
+                    <Button Grid.Row="3" Grid.Column="0" Style="{StaticResource SignInOutBtn}" Margin="0 10 0 0" Padding="0 0 0 30" Content="Орехи" x:Name="sortToType" Click="sortToType_Click"/>
+                    <Button Grid.Row="4" Grid.Column="0" Style="{StaticResource SignInOutBtn}" Margin="0 10 0 0" Padding="0 0 0 30" Content="Фрукты" x:Name="sortToPrice" Click="sortToPrice_Click"/>
+                    <Button Grid.Row="5" Grid.Column="0" Style="{StaticResource SignInOutBtn}" Margin="0 10 0 0" Padding="0 0 0 30" Content="Показать все" x:Name="SortToCategory" Click="SortToCategory_Click"/>
+                    <Border Grid.Row="7" BorderBrush="{StaticResource Color.SoftGreen}" BorderThickness="0 1 0 0" Margin="40 0">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="80"/>
+                                <RowDefinition Height="80"/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Button Grid.Row="0" Grid.Column="0" Style="{StaticResource SignInOutBtn}" Margin="0 10 0 0" Padding="0 0 0 30" Content="Изменить выбраный" x:Name="udateSelected" Click="udateSelected_Click"/>
+                            <Button Grid.Row="1" Grid.Column="0"  Style="{StaticResource SignInOutBtn}" Margin="0 10 0 0" Padding="0 0 0 30" Content="Удалить выбраный" x:Name="deleteSelected" Click="deleteSelected_Click"/>
+                        </Grid>
+                    </Border>
+
+                    <Border Grid.Column="1" Grid.Row="1" Grid.RowSpan="7" Margin="0 -40 0 0 " BorderBrush="{StaticResource Color.SoftGreen}" BorderThickness="1 0 0 0">
+                        <ListBox Grid.Row="1" Margin="0 40 20 0" ItemsSource="{Binding Path=Products}" x:Name="listboxdatacontext" BorderThickness="0 1 0 0" ScrollViewer.HorizontalScrollBarVisibility="Hidden">
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="270"/>
+                                            <ColumnDefinition Width="60"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition/>
+                                            <RowDefinition/>
+                                            <RowDefinition/>
+                                            <RowDefinition/>
+                                        </Grid.RowDefinitions>
+                                        <TextBlock Grid.Row="0" Style="{StaticResource textBoxRegular}" Text="{Binding Path=ProductName}"/>
+                                        <TextBlock Grid.Row="1" Style="{StaticResource textBoxRegular}" Text="{Binding Path=ProductType}"/>
+                                        <TextBlock Grid.Row="2" Style="{StaticResource textBoxRegular}" Text="{Binding Path=Price}"/>
+                                        <Image Grid.Row="0" Grid.Column="1" Grid.RowSpan="3" Source="{Binding Path=ImgSource}"/>
+                                    </Grid>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
+                    </Border>
+                </Grid>
+            </Border>
+        </Grid>
     </Grid>
 </Page>

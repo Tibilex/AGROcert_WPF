@@ -133,6 +133,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>UsersModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\AdminProfileViewModel.cs" />
     <Compile Include="ViewModels\FoodViewModel.cs" />
     <Compile Include="ViewModels\FruitsViewModel.cs" />
     <Compile Include="ViewModels\KernelsViewModel.cs" />

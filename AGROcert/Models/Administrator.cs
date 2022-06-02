@@ -13,12 +13,26 @@ namespace AGROcert.Models
     using System.Collections.Generic;
     
     public partial class Administrator
-    {
+    { 
+
         public int Id { get; set; }
         public string AdmName { get; set; }
         public string AdmSurname { get; set; }
         public string AdmPhone { get; set; }
         public string AdmEmail { get; set; }
         public string AdmPassword { get; set; }
+
+        public Administrator()
+        {
+
+        }
+
+        public Administrator(string admName, string admSurname, string admPhone, string admEmail)
+        {
+            AdmName = admName;
+            AdmSurname = admSurname;
+            AdmPhone = admPhone;
+            AdmEmail = admEmail;           
+        }
     }
 }

@@ -428,7 +428,7 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
-                    <Border x:Name="border" CornerRadius="0" BorderBrush="{TemplateBinding Background}" BorderThickness="1" Background="{TemplateBinding Background}">
+                    <Border x:Name="border" CornerRadius="0" BorderBrush="{TemplateBinding Background}" BorderThickness="1" Background="{TemplateBinding Background}" Margin="{TemplateBinding Margin}" Padding="{TemplateBinding Padding}">
                         <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
                     </Border>
                     <ControlTemplate.Triggers>
