@@ -24,17 +24,18 @@ namespace AGROcert.ViewModels
         private void GetDataInDataBase()
         {
             SqlConnection connection = new SqlConnection(_connectionString);
-            SqlCommand command = new SqlCommand("SELECT ProductName, ProductType, Price, Category, Image FROM Products", connection);
+            SqlCommand command = new SqlCommand("SELECT * FROM Products", connection);
             connection.Open();
             SqlDataReader dataReader = command.ExecuteReader();
 
             while (dataReader.Read())
             {
-                object productName = dataReader.GetValue(0);
-                object productType = dataReader.GetValue(1);
-                object price = dataReader.GetValue(2);
-                object category = dataReader.GetValue(3);
-                var img = (byte[])dataReader.GetValue(4);
+                object productId = dataReader.GetValue(0);
+                object productName = dataReader.GetValue(1);
+                object productType = dataReader.GetValue(2);
+                object price = dataReader.GetValue(3);
+                object category = dataReader.GetValue(4);
+                var img = (byte[])dataReader.GetValue(5);
 
                 ImageSource productImage = null;
 
@@ -52,7 +53,7 @@ namespace AGROcert.ViewModels
                 }
                 image.Freeze();
                 productImage = image;
-                Products.Add(new ProductModel(productName.ToString(), productType.ToString(), (int)price, category.ToString(), productImage));
+                Products.Add(new ProductModel((int)productId, productName.ToString(), productType.ToString(), (int)price, category.ToString(), productImage));
             }
             dataReader.Close();
             connection.Close();

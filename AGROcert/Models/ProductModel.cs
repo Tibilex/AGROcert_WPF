@@ -7,6 +7,7 @@ namespace AGROcert.Models
 {
     public class ProductModel : INotifyPropertyChanged
     {
+        private int _id;
         private string _productName;
         private int _price;
         private string _productType;
@@ -14,6 +15,14 @@ namespace AGROcert.Models
         private Byte[] _image;
         private ImageSource _imgSource;
 
+        public int Id
+        {
+            get { return _id; }
+            set {
+                _id = value;
+                OnPropertyChanged("Id");
+            }
+        }
         public string ProductName
         {
             get { return _productName; }
@@ -67,8 +76,23 @@ namespace AGROcert.Models
             }
         }
 
+        public ProductModel()
+        {
+
+        }
+
         public ProductModel(string name, string type, int price, string category, ImageSource image)
         {
+            ProductName = name;
+            ProductType = type;
+            Price = price;
+            Category = category;
+            ImgSource = image;
+        }
+
+        public ProductModel(int id, string name, string type, int price, string category, ImageSource image)
+        {
+            Id = id;
             ProductName = name;
             ProductType = type;
             Price = price;
